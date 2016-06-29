@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistencia.iml" filepath="$PROJECT_DIR$/.idea/modules/persistencia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistencia_main.iml" filepath="$PROJECT_DIR$/.idea/modules/persistencia_main.iml" group="persistencia" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistencia_test.iml" filepath="$PROJECT_DIR$/.idea/modules/persistencia_test.iml" group="persistencia" />
+    </modules>
+  </component>
+</project>
