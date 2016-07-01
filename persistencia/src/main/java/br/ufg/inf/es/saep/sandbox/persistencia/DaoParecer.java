@@ -3,11 +3,14 @@ package br.ufg.inf.es.saep.sandbox.persistencia;
 import br.ufg.inf.es.saep.sandbox.dominio.Alteracao;
 import br.ufg.inf.es.saep.sandbox.dominio.Parecer;
 import br.ufg.inf.es.saep.sandbox.dominio.ParecerRepository;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoDatabase;
 
-/**
- * Created by paulo on 30/06/16.
- */
+
 public class DaoParecer implements ParecerRepository {
+
+    MongoClient mongoClient =  new MongoClient();
+    MongoDatabase db = mongoClient.getDatabase("saep");
 
 
     public void persisteParecer(Parecer parecer) {
