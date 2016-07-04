@@ -1,4 +1,4 @@
-package br.ufg.inf.es.saep.sandbox.persistencia;
+package br.ufg.inf.es.saep.persistencia;
 
 import br.ufg.inf.es.saep.sandbox.dominio.Resolucao;
 import br.ufg.inf.es.saep.sandbox.dominio.ResolucaoRepository;
@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class DaoResolucao implements ResolucaoRepository {
 
+
     public void persiste(Tipo tipo) {
 
     }
@@ -19,9 +20,6 @@ public class DaoResolucao implements ResolucaoRepository {
         return null;
     }
 
-    public Tipo byCodigo(String codigo) {
-        return null;
-    }
 
     public List<String> resolucoes() {
         return null;
@@ -31,11 +29,23 @@ public class DaoResolucao implements ResolucaoRepository {
         return false;
     }
 
-    public List<Tipo> byNome(String nome) {
-        return null;
-    }
 
     public Resolucao byId(String identificador) {
         return null;
     }
+
+    public Tipo tipoPeloCodigo(String codigo){
+        return null;
+    }
+    public List<Tipo> tiposPeloNome(String nome){
+        return null;
+    }
+    public void persisteTipo(Tipo tipo){
+
+    }
+    public void removeTipo(String codigo){
+
+    }
+
+
 }
