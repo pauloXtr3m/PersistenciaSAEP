@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fd55bee-0454-49ec-bf89-3a74b072551b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_kyriosdata_saep_saep_dominio_1_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/aplicacao/RelatorioParecerRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/avaliador/ResolucaoRepositoryJson.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Alteracao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Atributo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/AvaliaRegraService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/AvaliadorService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Avaliavel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Grupo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/OrdenacaoService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Parecer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/ParecerRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Pontuacao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Radoc.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/RadocRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Regra.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Relato.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Resolucao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/ResolucaoRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/SaepException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Tipo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/dominio/Valor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/infraestrutura/Avaliador.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/persistencia/DaoRadoc.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/persistencia/DaoParecer.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/persistencia/DaoResolucao.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/persistencia_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/persistencia_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/persistencia_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/persistencia_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
     </list>
     <ignored path="persistencia.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -825,11 +793,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467327355571</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Base do projeto atualizada:&#10;&#10;- Repositório base do SAEP adicionado direto pelo gradle&#10;">
+      <created>1467597406509</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1467597406509</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="2560" height="1053" extended-state="6" />
+    <frame x="0" y="27" width="2560" height="1053" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -872,7 +847,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Foram criadas 3 classes, para persistir:&#10;&#10;- Parecer&#10;- Radoc&#10;- Resolução" />
-    <option name="LAST_COMMIT_MESSAGE" value="Foram criadas 3 classes, para persistir:&#10;&#10;- Parecer&#10;- Radoc&#10;- Resolução" />
+    <MESSAGE value="Base do projeto atualizada:&#10;&#10;- Repositório base do SAEP adicionado direto pelo gradle&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base do projeto atualizada:&#10;&#10;- Repositório base do SAEP adicionado direto pelo gradle&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
