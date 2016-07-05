@@ -16,6 +16,7 @@ public class DataBase {
     public static String PARECER_COLLECTION = "parecerRepository";
     public static String RESOLUCAO_COLLECTION = "resolucaoRepository";
 
+
     public static void createCollections(){
         try{
             db.createCollection(DataBase.PARECER_COLLECTION);
