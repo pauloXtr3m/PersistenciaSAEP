@@ -3,6 +3,10 @@ package br.ufg.inf.es.saep.persistencia;
 import br.ufg.inf.es.saep.sandbox.dominio.Resolucao;
 import br.ufg.inf.es.saep.sandbox.dominio.ResolucaoRepository;
 import br.ufg.inf.es.saep.sandbox.dominio.Tipo;
+import com.google.gson.Gson;
+import com.mongodb.MongoBulkWriteException;
+import com.mongodb.MongoCommandException;
+import org.bson.Document;
 
 import java.util.List;
 
@@ -12,12 +16,15 @@ import java.util.List;
 public class DaoResolucao implements ResolucaoRepository {
 
 
-    public void persiste(Tipo tipo) {
-
-    }
-
     public String persiste(Resolucao resolucao) {
-        return null;
+        Gson gson = new Gson();
+        try{
+            DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION).insertOne(new Document("resolucao", gson.toJson(resolucao)));
+            return "true";
+        }catch(MongoBulkWriteException e){
+            return "false";
+        }
+
     }
 
 
@@ -26,7 +33,13 @@ public class DaoResolucao implements ResolucaoRepository {
     }
 
     public boolean remove(String identificador) {
-        return false;
+
+        try{
+            DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION).deleteMany(new Document("resolucao", identificador));
+            return true;
+        }catch(MongoCommandException e){
+            return false;
+        }
     }
 
 

@@ -19,13 +19,15 @@ public class DaoParecer implements ParecerRepository{
 
     public void persisteParecer(Parecer parecer) {
 
-        DataBase.db.getCollection(DataBase.PARECER_COLLECTION).insertOne(new Document("parecer", gson.toJson(parecer)));
-    }
+        DataBase.db.getCollection(DataBase.PARECER_COLLECTION).insertOne(new Document("parecer", new Document()
+                .append("id", parecer.getId())
+                .append("parecer",gson.toJson(parecer))));
+}
     public void removeParecer(String id){
-        DataBase.db.getCollection(DataBase.PARECER_COLLECTION).deleteMany(new Document());
+
+        DataBase.db.getCollection(DataBase.PARECER_COLLECTION).deleteMany(new Document("parecer", new Document("id", id)));
 
     }
-
 
     public String persisteRadoc(Radoc radoc){
         return null;
