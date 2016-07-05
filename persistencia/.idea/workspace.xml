@@ -4,7 +4,7 @@
     <list default="true" id="1fd55bee-0454-49ec-bf89-3a74b072551b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java" />
     </list>
     <ignored path="persistencia.iws" />
@@ -54,8 +54,8 @@
       <file leaf-file-name="DaoParecer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+            <state relative-caret-position="-571">
+              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,8 +103,8 @@
       <file leaf-file-name="DaoResolucao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+            <state relative-caret-position="558">
+              <caret line="41" column="106" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="106" />
               <folding />
             </state>
           </provider>
@@ -115,7 +115,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4842">
               <caret line="307" column="13" selection-start-line="307" selection-start-column="9" selection-end-line="307" selection-end-column="18" />
-              <folding />
+              <folding>
+                <element signature="e#0#28212#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,8 +129,47 @@
             <state relative-caret-position="7272">
               <caret line="516" column="40" selection-start-line="516" selection-start-column="31" selection-end-line="516" selection-end-column="40" />
               <folding>
-                <element signature="e#13513#13514#0" expanded="true" />
-                <element signature="e#13572#13573#0" expanded="true" />
+                <element signature="e#0#26118#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#4605#4606#0" expanded="false" />
+                <element signature="e#4637#4638#0" expanded="false" />
+                <element signature="e#4701#4702#0" expanded="false" />
+                <element signature="e#4737#4738#0" expanded="false" />
+                <element signature="e#4798#4799#0" expanded="false" />
+                <element signature="e#4834#4835#0" expanded="false" />
+                <element signature="e#4897#4898#0" expanded="false" />
+                <element signature="e#4934#4935#0" expanded="false" />
+                <element signature="e#4993#4994#0" expanded="false" />
+                <element signature="e#5028#5029#0" expanded="false" />
+                <element signature="e#5085#5086#0" expanded="false" />
+                <element signature="e#5119#5120#0" expanded="false" />
+                <element signature="e#6524#6525#0" expanded="false" />
+                <element signature="e#6592#6593#0" expanded="false" />
+                <element signature="e#6650#6651#0" expanded="false" />
+                <element signature="e#6706#6707#0" expanded="false" />
+                <element signature="e#8068#8069#0" expanded="false" />
+                <element signature="e#8130#8131#0" expanded="false" />
+                <element signature="e#8365#8366#0" expanded="false" />
+                <element signature="e#8415#8416#0" expanded="false" />
+                <element signature="e#10284#10298#0" expanded="false" />
+                <element signature="e#14358#14373#0" expanded="false" />
+                <element signature="e#14979#14980#0" expanded="false" />
+                <element signature="e#15023#15024#0" expanded="false" />
+                <element signature="e#15094#15095#0" expanded="false" />
+                <element signature="e#15137#15138#0" expanded="false" />
+                <element signature="e#18955#18956#0" expanded="false" />
+                <element signature="e#19027#19028#0" expanded="false" />
+                <element signature="e#19091#19092#0" expanded="false" />
+                <element signature="e#19151#19152#0" expanded="false" />
+                <element signature="e#19525#19539#0" expanded="false" />
+                <element signature="e#21292#21293#0" expanded="false" />
+                <element signature="e#21342#21343#0" expanded="false" />
+                <element signature="e#21661#21662#0" expanded="false" />
+                <element signature="e#21739#21740#0" expanded="false" />
+                <element signature="e#21969#21970#0" expanded="false" />
+                <element signature="e#21999#22000#0" expanded="false" />
+                <element signature="e#25746#25747#0" expanded="false" />
+                <element signature="e#25801#25802#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -138,7 +180,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
               <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-              <folding />
+              <folding>
+                <element signature="e#0#3920#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -473,10 +517,10 @@
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/persistencia/DaoParecer.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoRadoc.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java" />
       </list>
     </option>
   </component>
@@ -489,7 +533,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="27" />
-    <option name="width" value="2560" />
+    <option name="width" value="1279" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -892,11 +936,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467645372179</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Métodos de remover e persistir parecer funcionando">
+      <created>1467740810016</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1467740810016</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="2560" height="1053" extended-state="0" />
+    <frame x="0" y="27" width="1279" height="1053" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -904,14 +955,14 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3658281" sideWeight="0.41132814" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37631026" sideWeight="0.5199219" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3836478" sideWeight="0.5215012" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37631026" sideWeight="0.48007813" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3836478" sideWeight="0.47849882" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1734375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25410476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -941,7 +992,8 @@
     <MESSAGE value="Foram criadas 3 classes, para persistir:&#10;&#10;- Parecer&#10;- Radoc&#10;- Resolução" />
     <MESSAGE value="Base do projeto atualizada:&#10;&#10;- Repositório base do SAEP adicionado direto pelo gradle&#10;" />
     <MESSAGE value="Metodos implementados na classe DaoParecer:&#10;&#10;- persisteParecer&#10;- removeParecer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Metodos implementados na classe DaoParecer:&#10;&#10;- persisteParecer&#10;- removeParecer" />
+    <MESSAGE value="Métodos de remover e persistir parecer funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="Métodos de remover e persistir parecer funcionando" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1126,7 +1178,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#0#3920#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1142,7 +1196,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4842">
           <caret line="307" column="13" selection-start-line="307" selection-start-column="9" selection-end-line="307" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="e#0#28212#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1151,8 +1208,47 @@
         <state relative-caret-position="7272">
           <caret line="516" column="40" selection-start-line="516" selection-start-column="31" selection-end-line="516" selection-end-column="40" />
           <folding>
-            <element signature="e#13513#13514#0" expanded="true" />
-            <element signature="e#13572#13573#0" expanded="true" />
+            <element signature="e#0#26118#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#4605#4606#0" expanded="false" />
+            <element signature="e#4637#4638#0" expanded="false" />
+            <element signature="e#4701#4702#0" expanded="false" />
+            <element signature="e#4737#4738#0" expanded="false" />
+            <element signature="e#4798#4799#0" expanded="false" />
+            <element signature="e#4834#4835#0" expanded="false" />
+            <element signature="e#4897#4898#0" expanded="false" />
+            <element signature="e#4934#4935#0" expanded="false" />
+            <element signature="e#4993#4994#0" expanded="false" />
+            <element signature="e#5028#5029#0" expanded="false" />
+            <element signature="e#5085#5086#0" expanded="false" />
+            <element signature="e#5119#5120#0" expanded="false" />
+            <element signature="e#6524#6525#0" expanded="false" />
+            <element signature="e#6592#6593#0" expanded="false" />
+            <element signature="e#6650#6651#0" expanded="false" />
+            <element signature="e#6706#6707#0" expanded="false" />
+            <element signature="e#8068#8069#0" expanded="false" />
+            <element signature="e#8130#8131#0" expanded="false" />
+            <element signature="e#8365#8366#0" expanded="false" />
+            <element signature="e#8415#8416#0" expanded="false" />
+            <element signature="e#10284#10298#0" expanded="false" />
+            <element signature="e#14358#14373#0" expanded="false" />
+            <element signature="e#14979#14980#0" expanded="false" />
+            <element signature="e#15023#15024#0" expanded="false" />
+            <element signature="e#15094#15095#0" expanded="false" />
+            <element signature="e#15137#15138#0" expanded="false" />
+            <element signature="e#18955#18956#0" expanded="false" />
+            <element signature="e#19027#19028#0" expanded="false" />
+            <element signature="e#19091#19092#0" expanded="false" />
+            <element signature="e#19151#19152#0" expanded="false" />
+            <element signature="e#19525#19539#0" expanded="false" />
+            <element signature="e#21292#21293#0" expanded="false" />
+            <element signature="e#21342#21343#0" expanded="false" />
+            <element signature="e#21661#21662#0" expanded="false" />
+            <element signature="e#21739#21740#0" expanded="false" />
+            <element signature="e#21969#21970#0" expanded="false" />
+            <element signature="e#21999#22000#0" expanded="false" />
+            <element signature="e#25746#25747#0" expanded="false" />
+            <element signature="e#25801#25802#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1168,16 +1264,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -1188,18 +1274,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+        <state relative-caret-position="558">
+          <caret line="41" column="106" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="106" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+        <state relative-caret-position="-571">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

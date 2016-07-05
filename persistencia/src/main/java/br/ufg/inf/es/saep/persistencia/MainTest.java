@@ -14,8 +14,8 @@ public class MainTest {
         DataBase.createCollections();
         DaoParecer daoParecer = new DaoParecer();
         Parecer parecer = new Parecer();
-       daoParecer.removeRadoc("a7ff5048-8ad5-4a0e-a6f6-1f15a28da431");
-        //daoParecer.persisteParecer(parecer);
+        daoParecer.removeParecer("b6c3a1a8-5ec1-4359-ba92-6b07607990e9");
+         //daoParecer.persisteParecer(parecer);
 
 
 

@@ -18,9 +18,13 @@ public class DaoResolucao implements ResolucaoRepository {
 
     public String persiste(Resolucao resolucao) {
         Gson gson = new Gson();
+
         try{
-            DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION).insertOne(new Document("resolucao", gson.toJson(resolucao)));
+            DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION).insertOne(new Document("resolucao",
+                    new Document().append("id", resolucao.getId())
+                    .append("objeto", gson.toJson(resolucao))));
             return "true";
+
         }catch(MongoBulkWriteException e){
             return "false";
         }
@@ -35,7 +39,7 @@ public class DaoResolucao implements ResolucaoRepository {
     public boolean remove(String identificador) {
 
         try{
-            DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION).deleteMany(new Document("resolucao", identificador));
+            DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION).deleteMany(new Document("resolucao.id", identificador));
             return true;
         }catch(MongoCommandException e){
             return false;
