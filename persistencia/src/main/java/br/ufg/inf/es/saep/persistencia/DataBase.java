@@ -15,7 +15,7 @@ public class DataBase {
     public static MongoDatabase db = mongoClient.getDatabase("saep");
     public static String PARECER_COLLECTION = "parecerRepository";
     public static String RESOLUCAO_COLLECTION = "resolucaoRepository";
-
+    public static String NOTA_COLLECTION = "notaRepository";
 
     public static void createCollections(){
         try{

@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java" />
     </list>
     <ignored path="persistencia.iws" />
@@ -54,10 +55,12 @@
       <file leaf-file-name="DaoParecer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-571">
-              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+            <state relative-caret-position="-660">
+              <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1878#1879#0" expanded="true" />
+                <element signature="e#1951#1952#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,8 +69,8 @@
       <file leaf-file-name="DataBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="450">
+              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,8 +81,8 @@
       <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+            <state relative-caret-position="325">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,11 +93,23 @@
       <file leaf-file-name="Parecer.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.0/4cc94ccdd20fbb61d2d3ecfb079431aaadcea55e/saep-dominio-1.0.0-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/Parecer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="1080">
               <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
               <folding>
-                <element signature="e#1513#1514#0" expanded="true" />
-                <element signature="e#1567#1568#0" expanded="true" />
+                <element signature="e#0#2429#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#2045#2046#0" expanded="false" />
+                <element signature="e#2070#2071#0" expanded="false" />
+                <element signature="e#2106#2107#0" expanded="false" />
+                <element signature="e#2138#2139#0" expanded="false" />
+                <element signature="e#2177#2178#0" expanded="false" />
+                <element signature="e#2206#2207#0" expanded="false" />
+                <element signature="e#2252#2253#0" expanded="false" />
+                <element signature="e#2285#2286#0" expanded="false" />
+                <element signature="e#2325#2326#0" expanded="false" />
+                <element signature="e#2361#2362#0" expanded="false" />
+                <element signature="e#2397#2398#0" expanded="false" />
+                <element signature="e#2425#2426#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -103,8 +118,21 @@
       <file leaf-file-name="DaoResolucao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="41" column="106" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="106" />
+            <state relative-caret-position="1530">
+              <caret line="103" column="48" selection-start-line="103" selection-start-column="48" selection-end-line="103" selection-end-column="48" />
+              <folding>
+                <element signature="e#3922#3923#0" expanded="true" />
+                <element signature="e#4000#4001#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tipo.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.0/4cc94ccdd20fbb61d2d3ecfb079431aaadcea55e/saep-dominio-1.0.0-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/Tipo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -126,51 +154,9 @@
       <file leaf-file-name="MongoCollectionImpl.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/3.2.2/9e364591f7c95d8dc642a90e9632cf3cb8b66ea7/mongo-java-driver-3.2.2-sources.jar!/com/mongodb/MongoCollectionImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7272">
+            <state relative-caret-position="523">
               <caret line="516" column="40" selection-start-line="516" selection-start-column="31" selection-end-line="516" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#26118#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#4605#4606#0" expanded="false" />
-                <element signature="e#4637#4638#0" expanded="false" />
-                <element signature="e#4701#4702#0" expanded="false" />
-                <element signature="e#4737#4738#0" expanded="false" />
-                <element signature="e#4798#4799#0" expanded="false" />
-                <element signature="e#4834#4835#0" expanded="false" />
-                <element signature="e#4897#4898#0" expanded="false" />
-                <element signature="e#4934#4935#0" expanded="false" />
-                <element signature="e#4993#4994#0" expanded="false" />
-                <element signature="e#5028#5029#0" expanded="false" />
-                <element signature="e#5085#5086#0" expanded="false" />
-                <element signature="e#5119#5120#0" expanded="false" />
-                <element signature="e#6524#6525#0" expanded="false" />
-                <element signature="e#6592#6593#0" expanded="false" />
-                <element signature="e#6650#6651#0" expanded="false" />
-                <element signature="e#6706#6707#0" expanded="false" />
-                <element signature="e#8068#8069#0" expanded="false" />
-                <element signature="e#8130#8131#0" expanded="false" />
-                <element signature="e#8365#8366#0" expanded="false" />
-                <element signature="e#8415#8416#0" expanded="false" />
-                <element signature="e#10284#10298#0" expanded="false" />
-                <element signature="e#14358#14373#0" expanded="false" />
-                <element signature="e#14979#14980#0" expanded="false" />
-                <element signature="e#15023#15024#0" expanded="false" />
-                <element signature="e#15094#15095#0" expanded="false" />
-                <element signature="e#15137#15138#0" expanded="false" />
-                <element signature="e#18955#18956#0" expanded="false" />
-                <element signature="e#19027#19028#0" expanded="false" />
-                <element signature="e#19091#19092#0" expanded="false" />
-                <element signature="e#19151#19152#0" expanded="false" />
-                <element signature="e#19525#19539#0" expanded="false" />
-                <element signature="e#21292#21293#0" expanded="false" />
-                <element signature="e#21342#21343#0" expanded="false" />
-                <element signature="e#21661#21662#0" expanded="false" />
-                <element signature="e#21739#21740#0" expanded="false" />
-                <element signature="e#21969#21970#0" expanded="false" />
-                <element signature="e#21999#22000#0" expanded="false" />
-                <element signature="e#25746#25747#0" expanded="false" />
-                <element signature="e#25801#25802#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,11 +164,9 @@
       <file leaf-file-name="ResolucaoRepository.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.0/4cc94ccdd20fbb61d2d3ecfb079431aaadcea55e/saep-dominio-1.0.0-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/ResolucaoRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#3920#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="186">
+              <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -533,7 +517,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="27" />
-    <option name="width" value="1279" />
+    <option name="width" value="2560" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -561,6 +545,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Default">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="persistencia">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -605,34 +617,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="persistencia" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Default">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="persistencia">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -943,11 +927,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467740810016</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refinamento dos metodos de adicionar e remover">
+      <created>1467744782088</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1467744782088</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1279" height="1053" extended-state="4" />
+    <frame x="0" y="27" width="2560" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -955,20 +946,20 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3658281" sideWeight="0.41132814" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3836478" sideWeight="0.5215012" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3836478" sideWeight="0.53398436" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3836478" sideWeight="0.47849882" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3836478" sideWeight="0.46601564" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25410476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25390625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39937106" sideWeight="0.490625" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -993,10 +984,13 @@
     <MESSAGE value="Base do projeto atualizada:&#10;&#10;- Repositório base do SAEP adicionado direto pelo gradle&#10;" />
     <MESSAGE value="Metodos implementados na classe DaoParecer:&#10;&#10;- persisteParecer&#10;- removeParecer" />
     <MESSAGE value="Métodos de remover e persistir parecer funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="Métodos de remover e persistir parecer funcionando" />
+    <MESSAGE value="Refinamento dos metodos de adicionar e remover" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refinamento dos metodos de adicionar e remover" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1004,16 +998,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="120" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1038,7 +1022,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3922#3923#0" expanded="true" />
+            <element signature="e#4000#4001#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1056,6 +1043,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1878#1879#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1064,7 +1053,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
+          <folding>
+            <element signature="e#3922#3923#0" expanded="true" />
+            <element signature="e#4000#4001#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1161,7 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="574">
           <caret line="35" column="13" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,16 +1162,6 @@
         <state relative-caret-position="630">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.0/4cc94ccdd20fbb61d2d3ecfb079431aaadcea55e/saep-dominio-1.0.0-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/ResolucaoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#3920#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1203,71 +1184,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/3.2.2/9e364591f7c95d8dc642a90e9632cf3cb8b66ea7/mongo-java-driver-3.2.2-sources.jar!/com/mongodb/MongoCollectionImpl.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.0/4cc94ccdd20fbb61d2d3ecfb079431aaadcea55e/saep-dominio-1.0.0-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/Parecer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7272">
-          <caret line="516" column="40" selection-start-line="516" selection-start-column="31" selection-end-line="516" selection-end-column="40" />
+        <state relative-caret-position="1080">
+          <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
           <folding>
-            <element signature="e#0#26118#0" expanded="false" />
+            <element signature="e#0#2429#0" expanded="false" />
             <element signature="imports" expanded="false" />
-            <element signature="e#4605#4606#0" expanded="false" />
-            <element signature="e#4637#4638#0" expanded="false" />
-            <element signature="e#4701#4702#0" expanded="false" />
-            <element signature="e#4737#4738#0" expanded="false" />
-            <element signature="e#4798#4799#0" expanded="false" />
-            <element signature="e#4834#4835#0" expanded="false" />
-            <element signature="e#4897#4898#0" expanded="false" />
-            <element signature="e#4934#4935#0" expanded="false" />
-            <element signature="e#4993#4994#0" expanded="false" />
-            <element signature="e#5028#5029#0" expanded="false" />
-            <element signature="e#5085#5086#0" expanded="false" />
-            <element signature="e#5119#5120#0" expanded="false" />
-            <element signature="e#6524#6525#0" expanded="false" />
-            <element signature="e#6592#6593#0" expanded="false" />
-            <element signature="e#6650#6651#0" expanded="false" />
-            <element signature="e#6706#6707#0" expanded="false" />
-            <element signature="e#8068#8069#0" expanded="false" />
-            <element signature="e#8130#8131#0" expanded="false" />
-            <element signature="e#8365#8366#0" expanded="false" />
-            <element signature="e#8415#8416#0" expanded="false" />
-            <element signature="e#10284#10298#0" expanded="false" />
-            <element signature="e#14358#14373#0" expanded="false" />
-            <element signature="e#14979#14980#0" expanded="false" />
-            <element signature="e#15023#15024#0" expanded="false" />
-            <element signature="e#15094#15095#0" expanded="false" />
-            <element signature="e#15137#15138#0" expanded="false" />
-            <element signature="e#18955#18956#0" expanded="false" />
-            <element signature="e#19027#19028#0" expanded="false" />
-            <element signature="e#19091#19092#0" expanded="false" />
-            <element signature="e#19151#19152#0" expanded="false" />
-            <element signature="e#19525#19539#0" expanded="false" />
-            <element signature="e#21292#21293#0" expanded="false" />
-            <element signature="e#21342#21343#0" expanded="false" />
-            <element signature="e#21661#21662#0" expanded="false" />
-            <element signature="e#21739#21740#0" expanded="false" />
-            <element signature="e#21969#21970#0" expanded="false" />
-            <element signature="e#21999#22000#0" expanded="false" />
-            <element signature="e#25746#25747#0" expanded="false" />
-            <element signature="e#25801#25802#0" expanded="false" />
+            <element signature="e#2045#2046#0" expanded="false" />
+            <element signature="e#2070#2071#0" expanded="false" />
+            <element signature="e#2106#2107#0" expanded="false" />
+            <element signature="e#2138#2139#0" expanded="false" />
+            <element signature="e#2177#2178#0" expanded="false" />
+            <element signature="e#2206#2207#0" expanded="false" />
+            <element signature="e#2252#2253#0" expanded="false" />
+            <element signature="e#2285#2286#0" expanded="false" />
+            <element signature="e#2325#2326#0" expanded="false" />
+            <element signature="e#2361#2362#0" expanded="false" />
+            <element signature="e#2397#2398#0" expanded="false" />
+            <element signature="e#2425#2426#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.0/4cc94ccdd20fbb61d2d3ecfb079431aaadcea55e/saep-dominio-1.0.0-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/Parecer.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.0/4cc94ccdd20fbb61d2d3ecfb079431aaadcea55e/saep-dominio-1.0.0-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/Tipo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
-          <folding>
-            <element signature="e#1513#1514#0" expanded="true" />
-            <element signature="e#1567#1568#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="186">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="450">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1276,28 +1227,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        <state relative-caret-position="325">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.0/4cc94ccdd20fbb61d2d3ecfb079431aaadcea55e/saep-dominio-1.0.0-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/ResolucaoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/3.2.2/9e364591f7c95d8dc642a90e9632cf3cb8b66ea7/mongo-java-driver-3.2.2-sources.jar!/com/mongodb/MongoCollectionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="516" column="40" selection-start-line="516" selection-start-column="31" selection-end-line="516" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="41" column="106" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="106" />
-          <folding />
+        <state relative-caret-position="1530">
+          <caret line="103" column="48" selection-start-line="103" selection-start-column="48" selection-end-line="103" selection-end-column="48" />
+          <folding>
+            <element signature="e#3922#3923#0" expanded="true" />
+            <element signature="e#4000#4001#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-571">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        <state relative-caret-position="-660">
+          <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1878#1879#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
           </folding>
         </state>
       </provider>

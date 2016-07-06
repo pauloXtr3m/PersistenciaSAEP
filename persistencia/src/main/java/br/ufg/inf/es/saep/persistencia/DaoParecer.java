@@ -12,55 +12,69 @@ import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.mongodb.util.JSON.parse;
+
 
 public class DaoParecer implements ParecerRepository{
 
     private Gson gson = new Gson();
+    private final String ID = "id", OBJETO = "objeto";
 
+    MongoCollection parecerCollection = DataBase.db.getCollection(DataBase.PARECER_COLLECTION);
+    MongoCollection notaCollection = DataBase.db.getCollection(DataBase.NOTA_COLLECTION);
+
+
+    //TESTADO
     public Parecer byId(String id) {
+
         Parecer parecer;
-        FindIterable<Document> iterable = DataBase.db.getCollection(DataBase.PARECER_COLLECTION)
-                .find(new Document("parecer.id", id));
-        iterable.forEach(new Block<Document>() {
-            @Override
-            public void apply(final Document document) {
-                if(document.containsKey("parecer.objeto")){
+        Document document = (Document) parecerCollection.find(new Document("parecer.id", id)).first();
+        Document parecerDoc = (Document) document.get("parecer");
+        String json = parecerDoc.getString(OBJETO);
+        parecer = gson.fromJson(json, Parecer.class);
 
-                    //parecer =  gson.fromJson(document.get("parecer.objeto").toString(), Parecer.class);
-                }
-
-            }
-        });
-        return null;
+        return parecer;
     }
 
+    //TESTADO
     public void persisteParecer(Parecer parecer) {
 
-        DataBase.db.getCollection(DataBase.PARECER_COLLECTION).insertOne(new Document("parecer",
-                new Document().append("id", parecer.getId())
-                .append("objeto",gson.toJson(parecer))));
-}
+        parecerCollection.insertOne(new Document("parecer",
+                new Document().append(ID, parecer.getId())
+                        .append(OBJETO, gson.toJson(parecer))));
+    }
+    //TESTADO
     public void removeParecer(String id){
 
-        DataBase.db.getCollection(DataBase.PARECER_COLLECTION).deleteMany(new Document("parecer.id", id));
+        parecerCollection.deleteOne(new Document("parecer.id", id));
     }
 
+
     public String persisteRadoc(Radoc radoc){
-        DataBase.db.getCollection(DataBase.PARECER_COLLECTION).insertOne(new Document("radoc",
-                new Document().append("id", radoc.getId())
-                        .append("objeto",gson.toJson(radoc))));
+
+        parecerCollection.insertOne(new Document("radoc",
+                new Document()
+                        .append(ID, radoc.getId())
+                        .append(OBJETO, gson.toJson(radoc))));
 
         return null;
     }
 
 
     public void removeRadoc(String id){
-        DataBase.db.getCollection(DataBase.PARECER_COLLECTION).
-                deleteMany(new Document("radoc.id", id));
+        parecerCollection.deleteOne(new Document("radoc.id", id));
     }
     public Radoc radocById(String id) {
 
-        return null;
+        Radoc radoc;
+        Document document = (Document) parecerCollection.find(new Document("radoc.id", id)).first();
+        Document radocDoc = (Document)document.get("radoc");
+        String json = radocDoc.getString(OBJETO);
+
+        radoc = gson.fromJson(json, Radoc.class);
+
+        return radoc;
+
     }
 
 
@@ -70,9 +84,10 @@ public class DaoParecer implements ParecerRepository{
     }
 
     public void adicionaNota(String parecer, Nota nota){
-        Gson gson = new Gson();
-        DataBase.db.getCollection(DataBase.PARECER_COLLECTION).
-                updateOne(new Document("parecer.id", parecer), new Document().append("parecer.nota", gson.toJson(nota)));
+
+        notaCollection.insertOne(new Document("nota",
+                new Document().append("idParecer", parecer)
+                        .append(OBJETO, gson.toJson(nota))));
     }
 
     public void removeNota(Avaliavel original){
