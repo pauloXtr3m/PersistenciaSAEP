@@ -1,6 +1,7 @@
 package br.ufg.inf.es.saep.persistencia;
 import br.ufg.inf.es.saep.sandbox.dominio.*;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
@@ -84,14 +85,15 @@ public class DaoParecer implements ParecerRepository{
     }
 
     public void adicionaNota(String parecer, Nota nota){
+        Parecer parecerObj = byId(parecer);
+        List<Nota> listaNotas = parecerObj.getNotas();
+        listaNotas.add(nota);
 
-        notaCollection.insertOne(new Document("nota",
-                new Document().append("idParecer", parecer)
-                        .append(OBJETO, gson.toJson(nota))));
     }
 
     public void removeNota(Avaliavel original){
 
+//        original.get();
     }
 
 
