@@ -1,9 +1,6 @@
 package br.ufg.inf.es.saep.persistencia;
 
-import br.ufg.inf.es.saep.sandbox.dominio.Parecer;
-import br.ufg.inf.es.saep.sandbox.dominio.Resolucao;
-import br.ufg.inf.es.saep.sandbox.dominio.ResolucaoRepository;
-import br.ufg.inf.es.saep.sandbox.dominio.Tipo;
+import br.ufg.inf.es.saep.sandbox.dominio.*;
 import com.google.gson.Gson;
 import com.mongodb.Block;
 import com.mongodb.MongoBulkWriteException;
@@ -31,17 +28,35 @@ public class DaoResolucao implements ResolucaoRepository {
     MongoCollection resolucaoCollection = DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION);
 
     public String persiste(Resolucao resolucao) {
+        Resolucao resolucaoTmp = null;
 
+        try{//Verifica se a Resolucao recebida tem id
 
-        try{
+            if(resolucao.getId() != null){
+                //Verifica se já existe uma Resolucao com o mesmo id
+                resolucaoTmp = byId( resolucao.getId());
+
+            }
+
+            //Se a Resolucao recebida nao tem id,
+            // joga uma exceção informando que a Resolucao está sem id
+        }catch (NullPointerException e ){
+            throw new CampoExigidoNaoFornecido("Resolução sem id");
+        }
+
+        // Se não existe Resolucao com o mesmo id, persiste Resolucao
+        if(resolucaoTmp == null){
             resolucaoCollection.insertOne(new Document("resolucao",
                     new Document().append(ID, resolucao.getId())
-                    .append(OBJETO, gson.toJson(resolucao))));
-            return "true";
+                            .append(OBJETO, gson.toJson(resolucao))));
+            return resolucao.getId();
 
-        }catch(MongoBulkWriteException e){
-            return "false";
+        }else{
+
+            //Se existe returna null
+            return null;
         }
+
 
     }
 
@@ -79,9 +94,15 @@ public class DaoResolucao implements ResolucaoRepository {
         Document resolucaoDoc = (Document) document.get("resolucao");
         String json = resolucaoDoc.getString(OBJETO);
 
-        resolucao = gson.fromJson(json, Resolucao.class);
+        if(json == null){
 
-        return resolucao;
+            return  null;
+        }else{
+            resolucao = gson.fromJson(json, Resolucao.class);
+
+            return resolucao;
+        }
+
     }
 
     public Tipo tipoPeloCodigo(String codigo){
