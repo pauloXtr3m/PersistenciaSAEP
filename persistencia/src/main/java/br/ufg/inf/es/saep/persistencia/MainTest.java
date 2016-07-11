@@ -31,23 +31,35 @@ public class MainTest {
 
 
 //-------------TESTE DE ADICIONAR NOTA-------------
-//        Avaliavel x = new Avaliavel() {
-//            @Override
-//            public Valor get(String atributo) {
-//                return null;
-//            }
-//        };
-//        Avaliavel y = new Avaliavel() {
-//            @Override
-//            public Valor get(String atributo) {
-//                return null;
-//            }
-//        };
-//
-//
-//        Nota nota = new Nota(x, y, "Nova Justificativa");
-//        daoParecer.adicionaNota("6f214ee1-6d1e-4964-bb17-d4b951568a51",nota);
 
+        Valor valor = new Valor(53453);
+        Avaliavel x = new Avaliavel() {
+            @Override
+            public Valor get(String atributo) {
+                return valor;
+            }
+        };
+        Avaliavel y = new Avaliavel() {
+            @Override
+            public Valor get(String atributo) {
+                return valor;
+            }
+        };
+
+
+        Nota nota = new Nota(x, y, "Nova Justificativa");
+        daoParecer.adicionaNota("4c4751d7-d430-45bd-8921-81426a1bdf51",nota);
+
+
+        try{
+            sleep(10000);
+        }catch(InterruptedException e){
+
+        }
+//        daoParecer.removeParecer("31a7f033-b197-4579-ab13-f8f6d20b424c");
+
+        System.out.println(nota.getItemOriginal());
+        daoParecer.removeNota("4c4751d7-d430-45bd-8921-81426a1bdf51", nota.getItemOriginal());
 
 //-------------TESTE DE ADICIONAR FUNDAMENTACAO-------------
 //        daoParecer.atualizaFundamentacao("6f214ee1-6d1e-4964-bb17-d4b951568a51", "Nova fundamentação");

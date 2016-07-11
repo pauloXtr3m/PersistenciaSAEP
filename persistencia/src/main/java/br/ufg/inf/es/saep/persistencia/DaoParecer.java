@@ -21,18 +21,32 @@ public class DaoParecer implements ParecerRepository{
     private Gson gson = new Gson();
     private final String ID = "id", OBJETO = "objeto";
 
-    MongoCollection parecerCollection = DataBase.db.getCollection(DataBase.PARECER_COLLECTION);
-    MongoCollection radocCollection = DataBase.db.getCollection(DataBase.RADOC_COLLECTION);
+    private MongoCollection parecerCollection = DataBase.db.getCollection(DataBase.PARECER_COLLECTION);
+    private MongoCollection radocCollection = DataBase.db.getCollection(DataBase.RADOC_COLLECTION);
 
     //TESTADO
     public Parecer byId(String id) {
 
-        Parecer parecer;
-        Document document = (Document) parecerCollection.find(new Document("parecer.id", id)).first();
-        Document parecerDoc = (Document) document.get("parecer");
-        String json = parecerDoc.getString(OBJETO);
-        parecer = gson.fromJson(json, Parecer.class);
+        Parecer parecer = new Parecer();
 
+        //Busca Parece através do id fornecido
+        Document document = (Document) parecerCollection.find(new Document("parecer.id", id)).first();
+        try{
+            //busca o documento "parecer" dentro do documento encontrado
+            Document parecerDoc = (Document) document.get("parecer");
+
+            //busca o campo do objeto dentro do documento "parecer"
+            String json = parecerDoc.getString(OBJETO);
+
+            //transforma o json encontrado em um objeto da classe Parecer
+            parecer = gson.fromJson(json, Parecer.class);
+        }catch(NullPointerException e ){
+
+            //Caso alguma referencia não seja encontrada no banco, retorna null
+            return null;
+        }
+
+        // retorna o objeto de Parecer encontrado
         return parecer;
     }
 
@@ -53,23 +67,30 @@ public class DaoParecer implements ParecerRepository{
 
     public String persisteRadoc(Radoc radoc){
 
-        //verifica se o radoc tem id
-        if(radoc.getId() == null)
-            throw new IdentificadorDesconhecido("Radoc com ID nulo");
-
-        //procura por radoc com mesmo id
 
         try{
-            Radoc radocTmp = radocById(radoc.getId());
+            //verifica se o radoc tem id
+            if(radoc.getId() == null)
+                throw new IdentificadorDesconhecido("Radoc com ID nulo");
 
-            return null;
-        }catch(NullPointerException e ){
+            //se o objeto está nulo e a exceção NullPointerException for lançada,
+            //lança IdentificadorDesconhecido
+        }catch(NullPointerException e){
+            throw new IdentificadorDesconhecido("Radoc com ID nulo");
+        }
 
+        //procura por radoc com mesmo id
+        Radoc radocTmp = radocById(radoc.getId());
+        if(radocTmp == null) {
             radocCollection.insertOne(new Document("radoc",
                     new Document()
                             .append(ID, radoc.getId())
                             .append(OBJETO, gson.toJson(radoc))));
             return radoc.getId();
+
+        }else {
+
+            return null;
         }
 
     }
@@ -83,13 +104,19 @@ public class DaoParecer implements ParecerRepository{
     //TESTADO
     public Radoc radocById(String id) {
 
-        Radoc radoc;
-
+        Radoc radoc = null;
         Document document = (Document) radocCollection.find(new Document("radoc.id", id)).first();
-        Document radocDoc = (Document)document.get("radoc");
-        String json = radocDoc.getString(OBJETO);
+        try{
 
-        radoc = gson.fromJson(json, Radoc.class);
+            Document parecerDoc = (Document) document.get("radoc");
+            String json = parecerDoc.getString(OBJETO);
+            radoc = gson.fromJson(json, Radoc.class);
+
+        }catch(NullPointerException e ){
+
+            return null;
+        }
+
 
         return radoc;
 
@@ -104,7 +131,7 @@ public class DaoParecer implements ParecerRepository{
         Parecer parecerObj = byId(parecer);
 
         //Se o Parecer não foi encontrado, lança uma exceção
-        if(parecerObj.getId() == null){
+        if(parecerObj == null){
             throw new IdentificadorDesconhecido("Parecer não existente");
         }
 
@@ -130,7 +157,7 @@ public class DaoParecer implements ParecerRepository{
         Parecer parecerObj = byId(parecer);
 
         //Se o Parecer não foi encontrado, lança uma exceção
-        if(parecerObj.getId() == null){
+        if(parecerObj == null){
             throw new IdentificadorDesconhecido("Parecer não existente");
         }
 
@@ -159,9 +186,39 @@ public class DaoParecer implements ParecerRepository{
 
     }
 
-    public void removeNota(Avaliavel original){
+    public void removeNota(String parecer, Avaliavel original){
+            Avaliavel test;
+            Parecer parecerObj = byId(parecer);
 
-//        original.get();
+            //Se o Parecer não foi encontrado, lança uma exceção
+            if(parecerObj.getId() == null){
+                throw new IdentificadorDesconhecido("Parecer não existente");
+            }
+
+            List<Nota> listaNotas = parecerObj.getNotas();
+
+            //procura uma nota com o Avaliavel recebido
+            for(Nota nota: listaNotas){
+                test = nota.getItemOriginal();
+
+                //se a nota encontrada tem o mesmo Avaliavel recebido
+                //exclui a nota
+                if(test.hashCode() == original.hashCode()){
+                    listaNotas.remove(nota);
+                }
+            }
+
+            //Cria um novo objeto Parecer com a lista de notas atualizada
+            Parecer novoParecer = new Parecer(parecerObj.getId(), parecerObj.getResolucao(),
+                    parecerObj.getRadocs(), parecerObj.getPontuacoes(),
+                    parecerObj.getFundamentacao(), listaNotas);
+
+            //remove o parecer desatualizado
+            removeParecer(parecer);
+
+            //armazena o novo objeto parecer com a nova Nota
+            persisteParecer(novoParecer);
+
     }
 
 

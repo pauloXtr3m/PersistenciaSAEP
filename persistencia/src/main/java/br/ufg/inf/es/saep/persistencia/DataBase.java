@@ -21,6 +21,7 @@ public class DataBase {
         try{
             db.createCollection(DataBase.PARECER_COLLECTION);
             db.createCollection(DataBase.RESOLUCAO_COLLECTION);
+            db.createCollection(DataBase.RADOC_COLLECTION);
         }catch(MongoCommandException e ){
             System.out.println("Collections já criadas");
         }
