@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1fd55bee-0454-49ec-bf89-3a74b072551b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java" />
     </list>
     <ignored path="persistencia.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -916,7 +914,14 @@
       <option name="project" value="LOCAL" />
       <updated>1467939576509</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Melhora no desempenho dos métodos">
+      <created>1468326860570</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1468326860570</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -968,7 +973,8 @@
     <MESSAGE value="Métodos de remover e persistir parecer funcionando" />
     <MESSAGE value="Refinamento dos metodos de adicionar e remover" />
     <MESSAGE value="Mudança no metodo de adicionar notas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mudança no metodo de adicionar notas" />
+    <MESSAGE value="Melhora no desempenho dos métodos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Melhora no desempenho dos métodos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
