@@ -1,19 +1,15 @@
 package br.ufg.inf.es.saep.persistencia;
 import br.ufg.inf.es.saep.sandbox.dominio.*;
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.mongodb.Block;
-import com.mongodb.MongoClient;
-import com.mongodb.client.FindIterable;
+
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+
 import org.bson.Document;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.mongodb.util.JSON.parse;
+
 
 
 public class DaoParecer implements ParecerRepository{
@@ -194,6 +190,8 @@ public class DaoParecer implements ParecerRepository{
             if(parecerObj.getId() == null){
                 throw new IdentificadorDesconhecido("Parecer não existente");
             }
+
+            Relato relato = null;
 
             List<Nota> listaNotas = parecerObj.getNotas();
 

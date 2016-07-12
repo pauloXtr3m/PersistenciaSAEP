@@ -26,6 +26,8 @@ public class DaoResolucao implements ResolucaoRepository {
     private final String ID = "id", OBJETO = "objeto";
 
     MongoCollection resolucaoCollection = DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION);
+    MongoCollection tipoCollection = DataBase.db.getCollection(DataBase.TIPO_COLLECTION);
+
 
     public String persiste(Resolucao resolucao) {
         Resolucao resolucaoTmp = null;
@@ -121,7 +123,7 @@ public class DaoResolucao implements ResolucaoRepository {
         List<Tipo> listaTipos = new ArrayList<>();
 
 
-        FindIterable<Document> iterable = resolucaoCollection.find(new Document("tipo.nome", nome));
+        FindIterable<Document> iterable = tipoCollection.find(new Document("tipo.nome", nome));
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(Document document) {
@@ -135,13 +137,13 @@ public class DaoResolucao implements ResolucaoRepository {
 
     public void persisteTipo(Tipo tipo){
 
-        resolucaoCollection.insertOne(new Document("tipo",
+        tipoCollection.insertOne(new Document("tipo",
                 new Document().append(ID, tipo.getId())
                         .append("nome", tipo.getNome())
                         .append(OBJETO, gson.toJson(tipo))));
     }
     public void removeTipo(String codigo){
-        resolucaoCollection.deleteOne(new Document("tipo.id", codigo));
+        tipoCollection.deleteOne(new Document("tipo.id", codigo));
     }
 
 

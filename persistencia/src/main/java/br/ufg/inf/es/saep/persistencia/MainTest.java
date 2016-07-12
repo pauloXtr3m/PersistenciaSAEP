@@ -28,38 +28,36 @@ public class MainTest {
 //        daoParecer.removeParecer("31a7f033-b197-4579-ab13-f8f6d20b424c");
 
 
-
-
 //-------------TESTE DE ADICIONAR NOTA-------------
-
-        Valor valor = new Valor(53453);
-        Avaliavel x = new Avaliavel() {
-            @Override
-            public Valor get(String atributo) {
-                return valor;
-            }
-        };
-        Avaliavel y = new Avaliavel() {
-            @Override
-            public Valor get(String atributo) {
-                return valor;
-            }
-        };
-
-
-        Nota nota = new Nota(x, y, "Nova Justificativa");
-        daoParecer.adicionaNota("4c4751d7-d430-45bd-8921-81426a1bdf51",nota);
-
-
-        try{
-            sleep(10000);
-        }catch(InterruptedException e){
-
-        }
+//
+//        Valor valor = new Valor(53453);
+//        Avaliavel x = new Avaliavel() {
+//            @Override
+//            public Valor get(String atributo) {
+//                return valor;
+//            }
+//        };
+//        Avaliavel y = new Avaliavel() {
+//            @Override
+//            public Valor get(String atributo) {
+//                return valor;
+//            }
+//        };
+//
+//
+//        Nota nota = new Nota(x, y, "Nova Justificativa");
+//        daoParecer.adicionaNota("4c4751d7-d430-45bd-8921-81426a1bdf51",nota);
+//
+//
+//        try{
+//            sleep(10000);
+//        }catch(InterruptedException e){
+//
+//        }
 //        daoParecer.removeParecer("31a7f033-b197-4579-ab13-f8f6d20b424c");
+//        System.out.println(nota.getItemOriginal());
+//        daoParecer.removeNota("4c4751d7-d430-45bd-8921-81426a1bdf51", nota.getItemOriginal());
 
-        System.out.println(nota.getItemOriginal());
-        daoParecer.removeNota("4c4751d7-d430-45bd-8921-81426a1bdf51", nota.getItemOriginal());
 
 //-------------TESTE DE ADICIONAR FUNDAMENTACAO-------------
 //        daoParecer.atualizaFundamentacao("6f214ee1-6d1e-4964-bb17-d4b951568a51", "Nova fundamentação");
@@ -78,7 +76,16 @@ public class MainTest {
 //        Radoc radoc1 = daoParecer.radocById(radoc.getId());
 //        System.out.println(radoc1.getId());
 
+
 //-------------REMOVER RADOC CRIADO ACIMA-------------
 //           daoParecer.removeRadoc("fasdf");
+
+//        Atributo atr = new Atributo("haha", "fhsud", 134);
+//        Set<Atributo> atributos = new HashSet<>();
+//        atributos.add(atr);
+//        Tipo tipo = new Tipo("asdf", "hahaha", "fhfapoiewj", atributos);
+//
+//        DaoResolucao daoResolucao = new DaoResolucao();
+//        daoResolucao.persisteTipo(tipo);
     }
 }
