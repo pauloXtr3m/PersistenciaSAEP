@@ -6,7 +6,6 @@ import com.mongodb.client.MongoCollection;
 
 import org.bson.Document;
 
-import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,16 +26,20 @@ public class DaoParecer implements ParecerRepository{
         Parecer parecer = new Parecer();
 
         //Busca Parece através do id fornecido
-        Document document = (Document) parecerCollection.find(new Document("parecer.id", id)).first();
+        Document document = (Document) parecerCollection.find(new Document(ID, id)).first();
         try{
-            //busca o documento "parecer" dentro do documento encontrado
-            Document parecerDoc = (Document) document.get("parecer");
+            List<Nota> notas = (List<Nota>) document.get("notas");
+            //transforma o documento encontrado em json
+            String json = document.toJson();
 
-            //busca o campo do objeto dentro do documento "parecer"
-            String json = parecerDoc.getString(OBJETO);
+            //atribui os valores do documento a um objeto parecer
+            parecer = new Parecer(id,
+                    document.getString("resolucaoId"),
+                    (ArrayList<String>) document.get("radocsIds"),
+                    (ArrayList<Pontuacao>) document.get("pontuacoes"),
+                    document.getString("fundamentacao"),
+                    (ArrayList<Nota>) document.get("notas"));
 
-            //transforma o json encontrado em um objeto da classe Parecer
-            parecer = gson.fromJson(json, Parecer.class);
         }catch(NullPointerException e ){
 
             //Caso alguma referencia não seja encontrada no banco, retorna null
@@ -49,15 +52,13 @@ public class DaoParecer implements ParecerRepository{
 
     //TESTADO
     public void persisteParecer(Parecer parecer) {
-
-        parecerCollection.insertOne(new Document("parecer",
-                new Document().append(ID, parecer.getId())
-                        .append(OBJETO, gson.toJson(parecer))));
+        Document doc = new Document().parse(gson.toJson(parecer));
+        parecerCollection.insertOne(doc);
     }
     //TESTADO
     public void removeParecer(String id){
 
-        parecerCollection.deleteOne(new Document("parecer.id", id));
+        parecerCollection.deleteOne(new Document("id", id));
     }
 
     //TESTADO
@@ -79,10 +80,8 @@ public class DaoParecer implements ParecerRepository{
         //procura por radoc com mesmo id
         Radoc radocTmp = radocById(radoc.getId());
         if(radocTmp == null) {
-            radocCollection.insertOne(new Document("radoc",
-                    new Document()
-                            .append(ID, radoc.getId())
-                            .append(OBJETO, gson.toJson(radoc))));
+            Document doc = new Document().parse(gson.toJson(radoc));
+            radocCollection.insertOne(doc);
             return radoc.getId();
 
         }else {
@@ -93,20 +92,18 @@ public class DaoParecer implements ParecerRepository{
     }
 
     //TESTADO
-
     public void removeRadoc(String id){
-        radocCollection.deleteOne(new Document("radoc.id", id));
+        radocCollection.deleteOne(new Document(ID, id));
     }
 
     //TESTADO
     public Radoc radocById(String id) {
 
         Radoc radoc = null;
-        Document document = (Document) radocCollection.find(new Document("radoc.id", id)).first();
+        Document document = (Document) radocCollection.find(new Document(ID, id)).first();
         try{
 
-            Document parecerDoc = (Document) document.get("radoc");
-            String json = parecerDoc.getString(OBJETO);
+            String json = document.toJson();
             radoc = gson.fromJson(json, Radoc.class);
 
         }catch(NullPointerException e ){
@@ -122,7 +119,6 @@ public class DaoParecer implements ParecerRepository{
 
 
     //TESTADO
-
     public void atualizaFundamentacao(String parecer, String fundamentacao){
         //Procura por Parecer com o id fornecido
         Parecer parecerObj = byId(parecer);
@@ -132,57 +128,31 @@ public class DaoParecer implements ParecerRepository{
             throw new IdentificadorDesconhecido("Parecer não existente");
         }
 
-        //Cria um novo objeto Parecer com a nova fundamentacao
-        Parecer novoParecer = new Parecer(parecerObj.getId(), parecerObj.getResolucao(),
-                parecerObj.getRadocs(), parecerObj.getPontuacoes(),
-                fundamentacao, parecerObj.getNotas());
+        //Atualiza a fundamentacao no parecer
+        parecerCollection.findOneAndUpdate(new Document(ID, parecer), new Document("$set", new Document("fundamentacao", fundamentacao)));
 
-        //remove o Parecer desatualizado
-        removeParecer(parecer);
-
-        //armazena o novo objeto parecer com a fundamentacao atualizada
-        persisteParecer(novoParecer);
     }
 
 
     //TESTADO
-
     public void adicionaNota(String parecer, Nota nota){
 
-
         //Procura por Parecer com o id fornecido
-        Parecer parecerObj = byId(parecer);
+       Parecer parecerObj = byId(parecer);
 
         //Se o Parecer não foi encontrado, lança uma exceção
-        if(parecerObj == null){
+       if(parecerObj == null){
             throw new IdentificadorDesconhecido("Parecer não existente");
         }
 
-        //Caso o parecer tenha sido encontrado, lê a sua lista de notas
-        List<Nota> listaNotas = parecerObj.getNotas();
 
-        //Caso o parecer ainda nao tenha nenhuma nota, cria uma nova lista de notas
-        if(listaNotas == null){
-            listaNotas = new ArrayList<Nota>();
-        }
 
-        //Adiciona uma nova Nota na lista lida
-        listaNotas.add(nota);
-
-        //Cria um novo objeto Parecer com a lista de notas atualizada
-        Parecer novoParecer = new Parecer(parecerObj.getId(), parecerObj.getResolucao(),
-                parecerObj.getRadocs(), parecerObj.getPontuacoes(),
-                parecerObj.getFundamentacao(), listaNotas);
-
-        //remove o parecer desatualizado
-        removeParecer(parecer);
-
-        //armazena o novo objeto parecer com a nova Nota
-        persisteParecer(novoParecer);
-
+        Document doc = new Document().parse(gson.toJson(nota));
+        parecerCollection.findOneAndUpdate(new Document(ID, parecer), new Document("$push", new Document("notas", doc)));
 
     }
 
+    //TESTADO
     public void removeNota(String parecer, Avaliavel original){
             Avaliavel test;
             Parecer parecerObj = byId(parecer);
@@ -192,31 +162,36 @@ public class DaoParecer implements ParecerRepository{
                 throw new IdentificadorDesconhecido("Parecer não existente");
             }
 
-            Relato relato = null;
-
             List<Nota> listaNotas = parecerObj.getNotas();
+            Nota notaEncontrada = null;
 
             //procura uma nota com o Avaliavel recebido
             for(Nota nota: listaNotas){
                 test = nota.getItemOriginal();
-
+                String jsonTest = gson.toJson(test);
+                String jsonOriginal = gson.toJson(original);
                 //se a nota encontrada tem o mesmo Avaliavel recebido
                 //exclui a nota
-                if(test.hashCode() == original.hashCode()){
-                    listaNotas.remove(nota);
+                if(jsonOriginal.equals(jsonTest)){
+                    notaEncontrada = nota;
                 }
             }
 
-            //Cria um novo objeto Parecer com a lista de notas atualizada
-            Parecer novoParecer = new Parecer(parecerObj.getId(), parecerObj.getResolucao(),
-                    parecerObj.getRadocs(), parecerObj.getPontuacoes(),
-                    parecerObj.getFundamentacao(), listaNotas);
-
-            //remove o parecer desatualizado
-            removeParecer(parecer);
-
-            //armazena o novo objeto parecer com a nova Nota
-            persisteParecer(novoParecer);
+            if(notaEncontrada != null){
+                Document doc = new Document().parse(gson.toJson(notaEncontrada));
+                parecerCollection.findOneAndUpdate(new Document("id", parecer), new Document("$pull", new Document("notas", doc)));
+            }
+//
+//            //Cria um novo objeto Parecer com a lista de notas atualizada
+//            Parecer novoParecer = new Parecer(parecerObj.getId(), parecerObj.getResolucao(),
+//                    parecerObj.getRadocs(), parecerObj.getPontuacoes(),
+//                    parecerObj.getFundamentacao(), listaNotas);
+//
+//            //remove o parecer desatualizado
+//            removeParecer(parecer);
+//
+//            //armazena o novo objeto parecer com a nova Nota
+//            persisteParecer(novoParecer);
 
     }
 
