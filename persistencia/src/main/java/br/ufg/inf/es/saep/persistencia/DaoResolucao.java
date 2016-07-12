@@ -48,9 +48,10 @@ public class DaoResolucao implements ResolucaoRepository {
 
         // Se não existe Resolucao com o mesmo id, persiste Resolucao
         if(resolucaoTmp == null){
-            resolucaoCollection.insertOne(new Document("resolucao",
-                    new Document().append(ID, resolucao.getId())
-                            .append(OBJETO, gson.toJson(resolucao))));
+
+            Document doc = new Document().parse(gson.toJson(resolucao));
+
+            resolucaoCollection.insertOne(doc);
             return resolucao.getId();
 
         }else{
@@ -66,12 +67,12 @@ public class DaoResolucao implements ResolucaoRepository {
     public List<String> resolucoes() {
         List<String> listaResolucoes = new ArrayList<>();
 
-        FindIterable<Document> iterable = resolucaoCollection.find(Filters.exists("resolucao.id"));
+        FindIterable<Document> iterable = resolucaoCollection.find(Filters.exists("id"));
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(Document document) {
-                Document resolucaoDoc = (Document) document.get("resolucao");
-                String idResolucao = resolucaoDoc.getString(ID);
+
+                String idResolucao = document.getString(ID);
                 listaResolucoes.add(idResolucao);
             }
         });
@@ -81,7 +82,7 @@ public class DaoResolucao implements ResolucaoRepository {
     public boolean remove(String identificador) {
 
         try{
-            resolucaoCollection.deleteOne(new Document("resolucao.id", identificador));
+            resolucaoCollection.deleteOne(new Document(ID, identificador));
             return true;
         }catch(MongoCommandException e){
             return false;
@@ -92,9 +93,9 @@ public class DaoResolucao implements ResolucaoRepository {
 
     public Resolucao byId(String identificador) {
         Resolucao resolucao;
-        Document document = (Document) resolucaoCollection.find(new Document("resolucao.id", identificador)).first();
-        Document resolucaoDoc = (Document) document.get("resolucao");
-        String json = resolucaoDoc.getString(OBJETO);
+        Document document = (Document) resolucaoCollection.find(new Document(ID, identificador)).first();
+
+        String json = document.toJson();
 
         if(json == null){
 
@@ -109,9 +110,8 @@ public class DaoResolucao implements ResolucaoRepository {
 
     public Tipo tipoPeloCodigo(String codigo){
         Tipo tipo;
-        Document document = (Document) resolucaoCollection.find(new Document("tipo.id", codigo)).first();
-        Document tipoDoc = (Document) document.get("tipo");
-        String json = tipoDoc.getString(OBJETO);
+        Document document = (Document) tipoCollection.find(new Document(ID, codigo)).first();
+        String json = document.toJson();
 
         tipo = gson.fromJson(json, Tipo.class);
 
@@ -127,8 +127,8 @@ public class DaoResolucao implements ResolucaoRepository {
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(Document document) {
-                Document tipoDoc = (Document) document.get("tipo");
-                String json = tipoDoc.getString(OBJETO);
+
+                String json = document.toJson();
                 listaTipos.add(gson.fromJson(json, Tipo.class));
             }
         });
@@ -136,14 +136,11 @@ public class DaoResolucao implements ResolucaoRepository {
     }
 
     public void persisteTipo(Tipo tipo){
-
-        tipoCollection.insertOne(new Document("tipo",
-                new Document().append(ID, tipo.getId())
-                        .append("nome", tipo.getNome())
-                        .append(OBJETO, gson.toJson(tipo))));
+        Document doc = new Document().parse(gson.toJson(tipo));
+        tipoCollection.insertOne(doc);
     }
     public void removeTipo(String codigo){
-        tipoCollection.deleteOne(new Document("tipo.id", codigo));
+        tipoCollection.deleteOne(new Document(ID, codigo));
     }
 
 
