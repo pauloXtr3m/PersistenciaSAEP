@@ -28,7 +28,7 @@ public class DaoResolucao implements ResolucaoRepository {
     MongoCollection resolucaoCollection = DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION);
     MongoCollection tipoCollection = DataBase.db.getCollection(DataBase.TIPO_COLLECTION);
 
-
+//TESTADO
     public String persiste(Resolucao resolucao) {
         Resolucao resolucaoTmp = null;
 
@@ -37,7 +37,6 @@ public class DaoResolucao implements ResolucaoRepository {
             if(resolucao.getId() != null){
                 //Verifica se já existe uma Resolucao com o mesmo id
                 resolucaoTmp = byId( resolucao.getId());
-
             }
 
             //Se a Resolucao recebida nao tem id,
@@ -56,14 +55,13 @@ public class DaoResolucao implements ResolucaoRepository {
 
         }else{
 
-            //Se existe returna null
-            return null;
+            throw new IdentificadorExistente("Uma resolução com este identificador já está registrada");
         }
 
 
     }
 
-
+//TESTADO
     public List<String> resolucoes() {
         List<String> listaResolucoes = new ArrayList<>();
 
@@ -78,9 +76,9 @@ public class DaoResolucao implements ResolucaoRepository {
         });
         return listaResolucoes;
     }
-
+//TESTADO
     public boolean remove(String identificador) {
-
+        boolean result;
         try{
             resolucaoCollection.deleteOne(new Document(ID, identificador));
             return true;
@@ -90,40 +88,45 @@ public class DaoResolucao implements ResolucaoRepository {
     }
 
 
-
+//TESTADO
     public Resolucao byId(String identificador) {
         Resolucao resolucao;
         Document document = (Document) resolucaoCollection.find(new Document(ID, identificador)).first();
 
-        String json = document.toJson();
-
-        if(json == null){
-
-            return  null;
-        }else{
+        try{
+            //Se não foi encontrada nenhuma resolução
+            // Será lançada NullPointerException
+            String json = document.toJson();
             resolucao = gson.fromJson(json, Resolucao.class);
-
             return resolucao;
+        }catch(NullPointerException e ){
+            // Se Resolucao não foi encontrada, retorna null
+            return  null;
         }
 
     }
-
+//TESTADO
     public Tipo tipoPeloCodigo(String codigo){
         Tipo tipo;
         Document document = (Document) tipoCollection.find(new Document(ID, codigo)).first();
-        String json = document.toJson();
+        try{
+            String json = document.toJson();
 
-        tipo = gson.fromJson(json, Tipo.class);
+            tipo = gson.fromJson(json, Tipo.class);
 
-        return tipo;
+            return tipo;
+        }catch(NullPointerException e){
+            return null;
+        }
+
 
     }
-
+//TESTADO
     public List<Tipo> tiposPeloNome(String nome){
         List<Tipo> listaTipos = new ArrayList<>();
 
 
-        FindIterable<Document> iterable = tipoCollection.find(new Document("tipo.nome", nome));
+        FindIterable<Document> iterable = tipoCollection.find(new Document("nome", nome));
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(Document document) {
@@ -134,11 +137,12 @@ public class DaoResolucao implements ResolucaoRepository {
         });
         return listaTipos;
     }
-
-    public void persisteTipo(Tipo tipo){
+//TESTADO
+    public void persisteTipo(Tipo tipo) {
         Document doc = new Document().parse(gson.toJson(tipo));
         tipoCollection.insertOne(doc);
     }
+//TESTADO
     public void removeTipo(String codigo){
         tipoCollection.deleteOne(new Document(ID, codigo));
     }

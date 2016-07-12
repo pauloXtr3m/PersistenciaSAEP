@@ -2,6 +2,7 @@ package br.ufg.inf.es.saep.persistencia;
 import br.ufg.inf.es.saep.sandbox.dominio.*;
 import com.google.gson.Gson;
 
+import com.google.gson.GsonBuilder;
 import com.mongodb.client.MongoCollection;
 
 import org.bson.Document;
@@ -14,7 +15,10 @@ import java.util.List;
 
 public class DaoParecer implements ParecerRepository{
 
-    private Gson gson = new Gson();
+
+    private Gson gson = new GsonBuilder().registerTypeAdapter(Avaliavel.class, new InterfaceAdapter<Avaliavel>())
+            .create();
+
     private final String ID = "id", OBJETO = "objeto";
 
     private MongoCollection parecerCollection = DataBase.db.getCollection(DataBase.PARECER_COLLECTION);
@@ -28,17 +32,11 @@ public class DaoParecer implements ParecerRepository{
         //Busca Parece através do id fornecido
         Document document = (Document) parecerCollection.find(new Document(ID, id)).first();
         try{
-            List<Nota> notas = (List<Nota>) document.get("notas");
             //transforma o documento encontrado em json
             String json = document.toJson();
 
             //atribui os valores do documento a um objeto parecer
-            parecer = new Parecer(id,
-                    document.getString("resolucaoId"),
-                    (ArrayList<String>) document.get("radocsIds"),
-                    (ArrayList<Pontuacao>) document.get("pontuacoes"),
-                    document.getString("fundamentacao"),
-                    (ArrayList<Nota>) document.get("notas"));
+            parecer = gson.fromJson(json, Parecer.class);
 
         }catch(NullPointerException e ){
 

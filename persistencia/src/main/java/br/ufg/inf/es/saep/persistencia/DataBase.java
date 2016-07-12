@@ -4,7 +4,11 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoCommandException;
 import com.mongodb.client.MongoDatabase;
 
+/**
+ * Classe que inicializa o banco de dados e suas collections
+ */
 public class DataBase {
+
     public static MongoClient mongoClient =  new MongoClient();
     public static MongoDatabase db = mongoClient.getDatabase("saep");
     public static String PARECER_COLLECTION = "parecer_collection";

@@ -34,24 +34,23 @@ public class MainTest {
 
 //-------------TESTE DE ADICIONAR NOTA E REMOVER NOTA-------------
 
-        Valor valor = new Valor(23432);
-        Pontuacao  pontuacao = new Pontuacao("testando", valor);
-        Avaliavel x = pontuacao;
-        Avaliavel y = new Avaliavel() {
-            @Override
-            public Valor get(String atributo) {
-                return valor;
-            }
-        };
-
-
-        Nota nota = new Nota(x, y, "Nova Justificativa aaaaaa");
-        daoParecer.adicionaNota("ee41f617-2a28-46d5-a082-20944b02e898",nota);
-
+//        Valor valor = new Valor("eita");
+//        Pontuacao  pontuacao = new Pontuacao("pontuacao", valor);
+//        Avaliavel x = pontuacao;
+//        Avaliavel y = new Avaliavel() {
+//            @Override
+//            public Valor get(String atributo) {
+//                return valor;
+//            }
+//        };
+//
+//
+//        Nota nota = new Nota(x, y, "Nova Justificat");
+//        daoParecer.adicionaNota("d366030b-75c8-440b-abce-bc0d23c2603f",nota);
 //
 //
 //        Nota nota2 = new Nota(x, y, "Nova Jus");
-//        daoParecer.removeNota("30f4bb66-8c35-41e2-bd71-5213210d354b", nota.getItemOriginal());
+//        daoParecer.removeNota("d366030b-75c8-440b-abce-bc0d23c2603f", nota.getItemOriginal());
 //
 
 //-------------TESTE DE ADICIONAR FUNDAMENTACAO-------------
@@ -75,12 +74,8 @@ public class MainTest {
 //-------------REMOVER RADOC CRIADO ACIMA-------------
 //           daoParecer.removeRadoc("fasdf");
 
-//        Atributo atr = new Atributo("haha", "fhsud", 134);
-//        Set<Atributo> atributos = new HashSet<>();
-//        atributos.add(atr);
-//        Tipo tipo = new Tipo("asdf", "hahaha", "fhfapoiewj", atributos);
-//
-//        DaoResolucao daoResolucao = new DaoResolucao();
-//        daoResolucao.persisteTipo(tipo);
+
+
+
     }
 }
