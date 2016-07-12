@@ -19,48 +19,43 @@ public class MainTest {
 
 //-------------TESTE DE PERSISTIR E REMOVER PARECER-------------
 //        daoParecer.persisteParecer(parecer);
-//
+
 //        try{
 //            sleep(10000);
 //        }catch(InterruptedException e){
 //
 //        }
 //        daoParecer.removeParecer("31a7f033-b197-4579-ab13-f8f6d20b424c");
+//        Parecer parecerTemp = daoParecer.byId("30f4bb66-8c35-41e2-bd71-5213210d354b");
+//        System.out.println(parecerTemp.getId());
+//        List<Nota> notas = parecerTemp.getNotas();
+//        System.out.println(notas.get(0).getJustificativa());
 
 
-//-------------TESTE DE ADICIONAR NOTA-------------
+//-------------TESTE DE ADICIONAR NOTA E REMOVER NOTA-------------
 //
-//        Valor valor = new Valor(53453);
-//        Avaliavel x = new Avaliavel() {
-//            @Override
-//            public Valor get(String atributo) {
-//                return valor;
-//            }
-//        };
-//        Avaliavel y = new Avaliavel() {
-//            @Override
-//            public Valor get(String atributo) {
-//                return valor;
-//            }
-//        };
-//
-//
-//        Nota nota = new Nota(x, y, "Nova Justificativa");
-//        daoParecer.adicionaNota("4c4751d7-d430-45bd-8921-81426a1bdf51",nota);
-//
-//
-//        try{
-//            sleep(10000);
-//        }catch(InterruptedException e){
-//
-//        }
-//        daoParecer.removeParecer("31a7f033-b197-4579-ab13-f8f6d20b424c");
-//        System.out.println(nota.getItemOriginal());
-//        daoParecer.removeNota("4c4751d7-d430-45bd-8921-81426a1bdf51", nota.getItemOriginal());
+        Valor valor = new Valor(23432);
+        Pontuacao  pontuacao = new Pontuacao("testando", valor);
+        Avaliavel x = pontuacao;
+        Avaliavel y = new Avaliavel() {
+            @Override
+            public Valor get(String atributo) {
+                return valor;
+            }
+        };
 
+//
+        Nota nota = new Nota(x, y, "Nova Justificativa aaaaaa");
+        daoParecer.adicionaNota("76aac22a-2138-4f84-99cb-d73435303115",nota);
+
+//
+//
+        Nota nota2 = new Nota(x, y, "Nova Jus");
+//        daoParecer.removeNota("30f4bb66-8c35-41e2-bd71-5213210d354b", nota2.getItemOriginal());
+//
 
 //-------------TESTE DE ADICIONAR FUNDAMENTACAO-------------
-//        daoParecer.atualizaFundamentacao("6f214ee1-6d1e-4964-bb17-d4b951568a51", "Nova fundamentação");
+//        daoParecer.atualizaFundamentacao("30f4bb66-8c35-41e2-bd71-5213210d354b", "testando");
 
 
 //-------------TESTE DE PERSISTIR E BUSCAR RADOC------------

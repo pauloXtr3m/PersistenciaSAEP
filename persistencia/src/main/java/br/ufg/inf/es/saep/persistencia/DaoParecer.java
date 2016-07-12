@@ -6,6 +6,7 @@ import com.mongodb.client.MongoCollection;
 
 import org.bson.Document;
 
+import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.List;
 
