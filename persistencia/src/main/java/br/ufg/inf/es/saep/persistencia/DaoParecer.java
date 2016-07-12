@@ -144,30 +144,6 @@ public class DaoParecer implements ParecerRepository{
             throw new IdentificadorDesconhecido("Parecer não existente");
         }
 
-//        List<Nota> listaNotas = parecerObj.getNotas();
-//
-//                        //Caso o parecer ainda nao tenha nenhuma nota, cria uma nova lista de notas
-//                                if(listaNotas == null){
-//                        listaNotas = new ArrayList<Nota>();
-//                   }
-//
-//                       //Adiciona uma nova Nota na lista lida
-//                                listaNotas.add(nota);
-//
-//                        //Cria um novo objeto Parecer com a lista de notas atualizada
-//          Parecer novoParecer = new Parecer(parecerObj.getId(),
-//                  parecerObj.getResolucao(),
-//                  parecerObj.getRadocs(),
-//                  parecerObj.getPontuacoes(), parecerObj.getFundamentacao(), listaNotas);
-//
-//               //remove o parecer desatualizado
-//          removeParecer(parecer);
-//
-//          //armazena o novo objeto parecer com a nova Nota
-//          persisteParecer(novoParecer);
-
-
-
         Document doc = new Document().parse(gson.toJson(nota));
         parecerCollection.findOneAndUpdate(new Document(ID, parecer), new Document("$push", new Document("notas", doc)));
 
@@ -202,17 +178,7 @@ public class DaoParecer implements ParecerRepository{
                 Document doc = new Document().parse(gson.toJson(notaEncontrada));
                 parecerCollection.findOneAndUpdate(new Document("id", parecer), new Document("$pull", new Document("notas", doc)));
             }
-//
-//            //Cria um novo objeto Parecer com a lista de notas atualizada
-//            Parecer novoParecer = new Parecer(parecerObj.getId(), parecerObj.getResolucao(),
-//                    parecerObj.getRadocs(), parecerObj.getPontuacoes(),
-//                    parecerObj.getFundamentacao(), listaNotas);
-//
-//            //remove o parecer desatualizado
-//            removeParecer(parecer);
-//
-//            //armazena o novo objeto parecer com a nova Nota
-//            persisteParecer(novoParecer);
+
 
     }
 

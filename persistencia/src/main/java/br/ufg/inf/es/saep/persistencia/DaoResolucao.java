@@ -139,12 +139,40 @@ public class DaoResolucao implements ResolucaoRepository {
     }
 //TESTADO
     public void persisteTipo(Tipo tipo) {
-        Document doc = new Document().parse(gson.toJson(tipo));
-        tipoCollection.insertOne(doc);
+
+        Tipo tipoTmp = tipoPeloCodigo(tipo.getId());
+
+        if(tipoTmp != null){Document doc = new Document().parse(gson.toJson(tipo));
+            tipoCollection.insertOne(doc);
+        }else {
+            throw new IdentificadorExistente("O tipo já existe");
+        }
+
+
     }
 //TESTADO
     public void removeTipo(String codigo){
-        tipoCollection.deleteOne(new Document(ID, codigo));
+        boolean tipoUsado = false;
+
+        List<String> listaResolucoes = resolucoes();
+
+        for(String idRes: listaResolucoes){
+            Resolucao res = byId(idRes);
+            List<Regra> regras = res.getRegras();
+
+            for(Regra regra: regras){
+                if(codigo.equals(regra.getTipoRelato())){
+                    tipoUsado = true;
+                }
+            }
+        }
+
+        if(tipoUsado){
+            throw new ResolucaoUsaTipoException("Este tipo está sendo usado em uma Resolução");
+        }else{
+            tipoCollection.deleteOne(new Document(ID, codigo));
+        }
+
     }
 
 
