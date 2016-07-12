@@ -52,13 +52,14 @@ public class DaoParecer implements ParecerRepository{
 
     //TESTADO
     public void persisteParecer(Parecer parecer) {
+
         Document doc = new Document().parse(gson.toJson(parecer));
         parecerCollection.insertOne(doc);
     }
     //TESTADO
     public void removeParecer(String id){
 
-        parecerCollection.deleteOne(new Document("id", id));
+        parecerCollection.deleteOne(new Document(ID, id));
     }
 
     //TESTADO
@@ -144,6 +145,28 @@ public class DaoParecer implements ParecerRepository{
        if(parecerObj == null){
             throw new IdentificadorDesconhecido("Parecer não existente");
         }
+
+//        List<Nota> listaNotas = parecerObj.getNotas();
+//
+//                        //Caso o parecer ainda nao tenha nenhuma nota, cria uma nova lista de notas
+//                                if(listaNotas == null){
+//                        listaNotas = new ArrayList<Nota>();
+//                   }
+//
+//                       //Adiciona uma nova Nota na lista lida
+//                                listaNotas.add(nota);
+//
+//                        //Cria um novo objeto Parecer com a lista de notas atualizada
+//          Parecer novoParecer = new Parecer(parecerObj.getId(),
+//                  parecerObj.getResolucao(),
+//                  parecerObj.getRadocs(),
+//                  parecerObj.getPontuacoes(), parecerObj.getFundamentacao(), listaNotas);
+//
+//               //remove o parecer desatualizado
+//          removeParecer(parecer);
+//
+//          //armazena o novo objeto parecer com a nova Nota
+//          persisteParecer(novoParecer);
 
 
 

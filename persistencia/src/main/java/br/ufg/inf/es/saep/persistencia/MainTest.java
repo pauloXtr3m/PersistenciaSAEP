@@ -26,14 +26,14 @@ public class MainTest {
 //
 //        }
 //        daoParecer.removeParecer("31a7f033-b197-4579-ab13-f8f6d20b424c");
-        Parecer parecerTemp = daoParecer.byId("30f4bb66-8c35-41e2-bd71-5213210d354b");
-        System.out.println(parecerTemp.getId());
-        List<Nota> notas = parecerTemp.getNotas();
-        System.out.println(notas.get(0).getJustificativa());
+//        Parecer parecerTemp = daoParecer.byId("30f4bb66-8c35-41e2-bd71-5213210d354b");
+//        System.out.println(parecerTemp.getId());
+//        List<Nota> notas = parecerTemp.getNotas();
+//        System.out.println(notas.get(0).getJustificativa());
 
 
 //-------------TESTE DE ADICIONAR NOTA E REMOVER NOTA-------------
-//
+
         Valor valor = new Valor(23432);
         Pontuacao  pontuacao = new Pontuacao("testando", valor);
         Avaliavel x = pontuacao;
@@ -44,14 +44,14 @@ public class MainTest {
             }
         };
 
-//
-//        Nota nota = new Nota(x, y, "Nova Justificativa aaaaaa");
-//        daoParecer.adicionaNota("30f4bb66-8c35-41e2-bd71-5213210d354b",nota);
+
+        Nota nota = new Nota(x, y, "Nova Justificativa aaaaaa");
+        daoParecer.adicionaNota("ee41f617-2a28-46d5-a082-20944b02e898",nota);
 
 //
 //
-        Nota nota2 = new Nota(x, y, "Nova Jus");
-//        daoParecer.removeNota("30f4bb66-8c35-41e2-bd71-5213210d354b", nota2.getItemOriginal());
+//        Nota nota2 = new Nota(x, y, "Nova Jus");
+//        daoParecer.removeNota("30f4bb66-8c35-41e2-bd71-5213210d354b", nota.getItemOriginal());
 //
 
 //-------------TESTE DE ADICIONAR FUNDAMENTACAO-------------
