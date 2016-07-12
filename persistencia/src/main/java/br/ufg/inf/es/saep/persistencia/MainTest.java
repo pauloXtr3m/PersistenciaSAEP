@@ -19,7 +19,6 @@ public class MainTest {
 
 //-------------TESTE DE PERSISTIR E REMOVER PARECER-------------
 //        daoParecer.persisteParecer(parecer);
-
 //        try{
 //            sleep(10000);
 //        }catch(InterruptedException e){

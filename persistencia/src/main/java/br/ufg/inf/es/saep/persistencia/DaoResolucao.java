@@ -23,12 +23,12 @@ import static com.sun.deploy.cache.Cache.exists;
 public class DaoResolucao implements ResolucaoRepository {
 
     private Gson gson = new Gson();
-    private final String ID = "id", OBJETO = "objeto";
+    private final String ID = "id";
 
     MongoCollection resolucaoCollection = DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION);
     MongoCollection tipoCollection = DataBase.db.getCollection(DataBase.TIPO_COLLECTION);
 
-//TESTADO
+
     public String persiste(Resolucao resolucao) {
         Resolucao resolucaoTmp = null;
 
@@ -43,6 +43,7 @@ public class DaoResolucao implements ResolucaoRepository {
             // joga uma exceção informando que a Resolucao está sem id
         }catch (NullPointerException e ){
             throw new CampoExigidoNaoFornecido("Resolução sem id");
+
         }
 
         // Se não existe Resolucao com o mesmo id, persiste Resolucao
@@ -61,11 +62,12 @@ public class DaoResolucao implements ResolucaoRepository {
 
     }
 
-//TESTADO
     public List<String> resolucoes() {
         List<String> listaResolucoes = new ArrayList<>();
 
+        //Recebe a lista de resolucoes
         FindIterable<Document> iterable = resolucaoCollection.find(Filters.exists("id"));
+        //Para cada Resolucao da lista, transforma em objeto e adiciona em uma nova lista a ser retornada
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(Document document) {
@@ -76,19 +78,24 @@ public class DaoResolucao implements ResolucaoRepository {
         });
         return listaResolucoes;
     }
-//TESTADO
+
     public boolean remove(String identificador) {
         boolean result;
-        try{
-            resolucaoCollection.deleteOne(new Document(ID, identificador));
+
+        resolucaoCollection.deleteOne(new Document(ID, identificador));
+
+        //Verifica se a Resolucao com o identificador recebido foi removida
+        Resolucao res = byId(ID);
+
+        if(res == null){
             return true;
-        }catch(MongoCommandException e){
+        }else{
             return false;
         }
+
     }
 
 
-//TESTADO
     public Resolucao byId(String identificador) {
         Resolucao resolucao;
         Document document = (Document) resolucaoCollection.find(new Document(ID, identificador)).first();
@@ -105,7 +112,7 @@ public class DaoResolucao implements ResolucaoRepository {
         }
 
     }
-//TESTADO
+
     public Tipo tipoPeloCodigo(String codigo){
         Tipo tipo;
         Document document = (Document) tipoCollection.find(new Document(ID, codigo)).first();
@@ -121,12 +128,14 @@ public class DaoResolucao implements ResolucaoRepository {
 
 
     }
-//TESTADO
+
     public List<Tipo> tiposPeloNome(String nome){
         List<Tipo> listaTipos = new ArrayList<>();
 
-
+    //Adiciona todos os tipos encontrados para um array
         FindIterable<Document> iterable = tipoCollection.find(new Document("nome", nome));
+
+    //Para cada tipo encontrado, transforma em objeto Tipo
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(Document document) {
@@ -137,7 +146,7 @@ public class DaoResolucao implements ResolucaoRepository {
         });
         return listaTipos;
     }
-//TESTADO
+
     public void persisteTipo(Tipo tipo) {
 
         Tipo tipoTmp = tipoPeloCodigo(tipo.getId());
@@ -150,7 +159,7 @@ public class DaoResolucao implements ResolucaoRepository {
 
 
     }
-//TESTADO
+
     public void removeTipo(String codigo){
         boolean tipoUsado = false;
 

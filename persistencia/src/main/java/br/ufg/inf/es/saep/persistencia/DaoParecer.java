@@ -3,6 +3,8 @@ import br.ufg.inf.es.saep.sandbox.dominio.*;
 import com.google.gson.Gson;
 
 import com.google.gson.GsonBuilder;
+import com.mongodb.Block;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 
 import org.bson.Document;
@@ -19,17 +21,16 @@ public class DaoParecer implements ParecerRepository{
     private Gson gson = new GsonBuilder().registerTypeAdapter(Avaliavel.class, new InterfaceAdapter<Avaliavel>())
             .create();
 
-    private final String ID = "id", OBJETO = "objeto";
+    private final String ID = "id";
 
     private MongoCollection parecerCollection = DataBase.db.getCollection(DataBase.PARECER_COLLECTION);
     private MongoCollection radocCollection = DataBase.db.getCollection(DataBase.RADOC_COLLECTION);
 
-    //TESTADO
     public Parecer byId(String id) {
 
         Parecer parecer = new Parecer();
 
-        //Busca Parece através do id fornecido
+        //Busca Parecer através do id fornecido
         Document document = (Document) parecerCollection.find(new Document(ID, id)).first();
         try{
             //transforma o documento encontrado em json
@@ -48,19 +49,23 @@ public class DaoParecer implements ParecerRepository{
         return parecer;
     }
 
-    //TESTADO
-    public void persisteParecer(Parecer parecer) {
 
-        Document doc = new Document().parse(gson.toJson(parecer));
-        parecerCollection.insertOne(doc);
+    public void persisteParecer(Parecer parecer) {
+        Parecer parecerTmp = byId(parecer.getId());
+        if(parecerTmp == null){
+            Document doc = new Document().parse(gson.toJson(parecer));
+            parecerCollection.insertOne(doc);
+        }else{
+            throw new IdentificadorExistente("Parecer com identificador já existente");
+        }
     }
-    //TESTADO
+
     public void removeParecer(String id){
 
         parecerCollection.deleteOne(new Document(ID, id));
     }
 
-    //TESTADO
+
 
     public String persisteRadoc(Radoc radoc){
 
@@ -90,23 +95,60 @@ public class DaoParecer implements ParecerRepository{
 
     }
 
-    //TESTADO
+
     public void removeRadoc(String id){
-        radocCollection.deleteOne(new Document(ID, id));
+        boolean idEmUso = false;
+
+        List<Parecer> listaPareceres = new ArrayList<>();
+        FindIterable<Document> iterable = parecerCollection.find();
+
+        //Para cada Parecer encontrado, transforma em objeto Parecer e adiciona em uma lista
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(Document document) {
+
+                String json = document.toJson();
+                listaPareceres.add(gson.fromJson(json, Parecer.class));
+            }
+        });
+
+        //Percorre a lista de pareceres e para cada Parecer, checa a lista de radocs associados
+        for(Parecer parecer: listaPareceres){
+
+            List<String> idRadocs = parecer.getRadocs();
+
+            for(String idRadoc: idRadocs){
+                // se o ID deste radoc é igual a fornecido, o radoc fornecido não pode ser excluído
+                if(idRadoc.equals(id)){
+                    idEmUso = true;
+                }
+            }
+        }
+
+        if(idEmUso){
+            throw new ExisteParecerReferenciandoRadoc("Radoc recebido já existe em algum Parecer");
+        }else{
+            radocCollection.deleteOne(new Document(ID, id));
+        }
+
+
     }
 
-    //TESTADO
+
     public Radoc radocById(String id) {
 
         Radoc radoc = null;
+
+        //Procura o radoc com o id fornecido
         Document document = (Document) radocCollection.find(new Document(ID, id)).first();
         try{
 
             String json = document.toJson();
+            // Se encontrou algum radoc, o transforma em objeto
             radoc = gson.fromJson(json, Radoc.class);
 
         }catch(NullPointerException e ){
-
+            //Se não encontrou, retorna null
             return null;
         }
 
@@ -117,7 +159,6 @@ public class DaoParecer implements ParecerRepository{
     }
 
 
-    //TESTADO
     public void atualizaFundamentacao(String parecer, String fundamentacao){
         //Procura por Parecer com o id fornecido
         Parecer parecerObj = byId(parecer);
@@ -133,7 +174,7 @@ public class DaoParecer implements ParecerRepository{
     }
 
 
-    //TESTADO
+
     public void adicionaNota(String parecer, Nota nota){
 
         //Procura por Parecer com o id fornecido
@@ -149,7 +190,6 @@ public class DaoParecer implements ParecerRepository{
 
     }
 
-    //TESTADO
     public void removeNota(String parecer, Avaliavel original){
             Avaliavel test;
             Parecer parecerObj = byId(parecer);
