@@ -10,9 +10,9 @@ import junit.framework.TestCase
  * Created by paulo on 12/07/16.
  */
 class DaoResolucaoTest extends TestCase{
-    String str = "fsf";
+    String str = "example";
     List<String> listaString = new ArrayList<>();
-    Regra regra = new Regra("fsda", 1, "fasdf", 80, 40, "sdfwe", "fasdf", "sdfwe", "sdfwe", 1,listaString);
+    Regra regra = new Regra("regra1", 1, "regra2", 80, 40, "regra2", "regra2", "regra2", "regra2", 1,listaString);
     List<Regra> listaRegra = new ArrayList<>();
     DaoResolucao daoResolucao = new DaoResolucao();
     Date date = new Date();
@@ -22,7 +22,7 @@ class DaoResolucaoTest extends TestCase{
     void testPersiste() {
         listaRegra.add(regra);
         date.getTime();
-        res = new Resolucao("1256", "haha", "descricao", date, listaRegra);
+        res = new Resolucao("1256", "resolucao", "descricao", date, listaRegra);
         DaoResolucao daoResolucao = new DaoResolucao();
         daoResolucao.persiste(res);
         Resolucao res1 = daoResolucao.byId("1256");
@@ -45,9 +45,9 @@ class DaoResolucaoTest extends TestCase{
     }
 
 
-    Atributo atr = new Atributo("haha", "fhsud", 1);
+    Atributo atr = new Atributo("atr", "example", 1);
     Set<Atributo> atributos = new HashSet<>();
-    Tipo tipo = new Tipo("codigo", "nome", "fhfapoiewj", atributos);
+    Tipo tipo = new Tipo("codigo", "nome", "tipo", atributos);
 
     void testTipoPeloCodigo() {
         atributos.add(atr);
