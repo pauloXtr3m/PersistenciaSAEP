@@ -12,7 +12,7 @@ import static java.lang.Thread.sleep;
  */
 public class MainTest {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         DataBase.createCollections();
         DaoParecer daoParecer = new DaoParecer();
         Parecer parecer = new Parecer();
@@ -72,8 +72,6 @@ public class MainTest {
 
 //-------------REMOVER RADOC CRIADO ACIMA-------------
 //           daoParecer.removeRadoc("fasdf");
-
-
 
 
     }

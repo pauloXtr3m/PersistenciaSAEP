@@ -22,39 +22,37 @@ import static com.sun.deploy.cache.Cache.exists;
  */
 public class DaoResolucao implements ResolucaoRepository {
 
-    private Gson gson = new Gson();
     private final String ID = "id";
-
     MongoCollection resolucaoCollection = DataBase.db.getCollection(DataBase.RESOLUCAO_COLLECTION);
     MongoCollection tipoCollection = DataBase.db.getCollection(DataBase.TIPO_COLLECTION);
-
+    private Gson gson = new Gson();
 
     public String persiste(Resolucao resolucao) {
         Resolucao resolucaoTmp = null;
 
-        try{//Verifica se a Resolucao recebida tem id
+        try {//Verifica se a Resolucao recebida tem id
 
-            if(resolucao.getId() != null){
+            if (resolucao.getId() != null) {
                 //Verifica se já existe uma Resolucao com o mesmo id
-                resolucaoTmp = byId( resolucao.getId());
+                resolucaoTmp = byId(resolucao.getId());
             }
 
             //Se a Resolucao recebida nao tem id,
             // joga uma exceção informando que a Resolucao está sem id
-        }catch (NullPointerException e ){
+        } catch (NullPointerException e) {
             throw new CampoExigidoNaoFornecido("Resolução sem id");
 
         }
 
         // Se não existe Resolucao com o mesmo id, persiste Resolucao
-        if(resolucaoTmp == null){
+        if (resolucaoTmp == null) {
 
             Document doc = new Document().parse(gson.toJson(resolucao));
 
             resolucaoCollection.insertOne(doc);
             return resolucao.getId();
 
-        }else{
+        } else {
 
             throw new IdentificadorExistente("Uma resolução com este identificador já está registrada");
         }
@@ -87,9 +85,9 @@ public class DaoResolucao implements ResolucaoRepository {
         //Verifica se a Resolucao com o identificador recebido foi removida
         Resolucao res = byId(ID);
 
-        if(res == null){
+        if (res == null) {
             return true;
-        }else{
+        } else {
             return false;
         }
 
@@ -100,42 +98,42 @@ public class DaoResolucao implements ResolucaoRepository {
         Resolucao resolucao;
         Document document = (Document) resolucaoCollection.find(new Document(ID, identificador)).first();
 
-        try{
+        try {
             //Se não foi encontrada nenhuma resolução
             // Será lançada NullPointerException
             String json = document.toJson();
             resolucao = gson.fromJson(json, Resolucao.class);
             return resolucao;
-        }catch(NullPointerException e ){
+        } catch (NullPointerException e) {
             // Se Resolucao não foi encontrada, retorna null
-            return  null;
+            return null;
         }
 
     }
 
-    public Tipo tipoPeloCodigo(String codigo){
+    public Tipo tipoPeloCodigo(String codigo) {
         Tipo tipo;
         Document document = (Document) tipoCollection.find(new Document(ID, codigo)).first();
-        try{
+        try {
             String json = document.toJson();
 
             tipo = gson.fromJson(json, Tipo.class);
 
             return tipo;
-        }catch(NullPointerException e){
+        } catch (NullPointerException e) {
             return null;
         }
 
 
     }
 
-    public List<Tipo> tiposPeloNome(String nome){
+    public List<Tipo> tiposPeloNome(String nome) {
         List<Tipo> listaTipos = new ArrayList<>();
 
-    //Adiciona todos os tipos encontrados para um array
+        //Adiciona todos os tipos encontrados para um array
         FindIterable<Document> iterable = tipoCollection.find(new Document("nome", nome));
 
-    //Para cada tipo encontrado, transforma em objeto Tipo
+        //Para cada tipo encontrado, transforma em objeto Tipo
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(Document document) {
@@ -151,34 +149,35 @@ public class DaoResolucao implements ResolucaoRepository {
 
         Tipo tipoTmp = tipoPeloCodigo(tipo.getId());
 
-        if(tipoTmp != null){Document doc = new Document().parse(gson.toJson(tipo));
+        if (tipoTmp != null) {
+            Document doc = new Document().parse(gson.toJson(tipo));
             tipoCollection.insertOne(doc);
-        }else {
+        } else {
             throw new IdentificadorExistente("O tipo já existe");
         }
 
 
     }
 
-    public void removeTipo(String codigo){
+    public void removeTipo(String codigo) {
         boolean tipoUsado = false;
 
         List<String> listaResolucoes = resolucoes();
 
-        for(String idRes: listaResolucoes){
+        for (String idRes : listaResolucoes) {
             Resolucao res = byId(idRes);
             List<Regra> regras = res.getRegras();
 
-            for(Regra regra: regras){
-                if(codigo.equals(regra.getTipoRelato())){
+            for (Regra regra : regras) {
+                if (codigo.equals(regra.getTipoRelato())) {
                     tipoUsado = true;
                 }
             }
         }
 
-        if(tipoUsado){
+        if (tipoUsado) {
             throw new ResolucaoUsaTipoException("Este tipo está sendo usado em uma Resolução");
-        }else{
+        } else {
             tipoCollection.deleteOne(new Document(ID, codigo));
         }
 
