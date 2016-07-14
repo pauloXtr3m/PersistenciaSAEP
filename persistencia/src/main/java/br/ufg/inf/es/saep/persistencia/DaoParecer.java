@@ -189,29 +189,27 @@ public class DaoParecer implements ParecerRepository {
         Avaliavel test;
         Parecer parecerObj = byId(parecer);
 
-        //Se o Parecer não foi encontrado, lança uma exceção
-        if (parecerObj.getId() == null) {
-            throw new IdentificadorDesconhecido("Parecer não existente");
-        }
+        //Se o Parecer foi encontrado, tenta procurar nota
+        if (parecerObj != null) {
+            List<Nota> listaNotas = parecerObj.getNotas();
+            Nota notaEncontrada = null;
 
-        List<Nota> listaNotas = parecerObj.getNotas();
-        Nota notaEncontrada = null;
-
-        //procura uma nota com o Avaliavel recebido
-        for (Nota nota : listaNotas) {
-            test = nota.getItemOriginal();
-            String jsonTest = gson.toJson(test);
-            String jsonOriginal = gson.toJson(original);
-            //se a nota encontrada tem o mesmo Avaliavel recebido
-            //exclui a nota
-            if (jsonOriginal.equals(jsonTest)) {
-                notaEncontrada = nota;
+            //procura uma nota com o Avaliavel recebido
+            for (Nota nota : listaNotas) {
+                test = nota.getItemOriginal();
+                String jsonTest = gson.toJson(test);
+                String jsonOriginal = gson.toJson(original);
+                //se a nota encontrada tem o mesmo Avaliavel recebido
+                //exclui a nota
+                if (jsonOriginal.equals(jsonTest)) {
+                    notaEncontrada = nota;
+                }
             }
-        }
-
-        if (notaEncontrada != null) {
-            Document doc = new Document().parse(gson.toJson(notaEncontrada));
-            parecerCollection.findOneAndUpdate(new Document("id", parecer), new Document("$pull", new Document("notas", doc)));
+            // Se a nota encontrada foi encontrada, tenta excluí-la
+            if (notaEncontrada != null) {
+                Document doc = new Document().parse(gson.toJson(notaEncontrada));
+                parecerCollection.findOneAndUpdate(new Document("id", parecer), new Document("$pull", new Document("notas", doc)));
+            }
         }
 
 

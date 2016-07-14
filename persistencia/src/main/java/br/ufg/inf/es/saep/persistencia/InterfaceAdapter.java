@@ -1,7 +1,7 @@
 package br.ufg.inf.es.saep.persistencia;
 
 import com.google.gson.*;
-import com.sun.deploy.ref.AppModel;
+
 
 import java.lang.reflect.Type;
 

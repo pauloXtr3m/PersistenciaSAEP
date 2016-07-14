@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fd55bee-0454-49ec-bf89-3a74b072551b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/br/ufg/inf/es/saep/persistencia/DaoParecerTest.groovy" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/br/ufg/inf/es/saep/persistencia/DaoResolucaoTest.groovy" afterPath="$PROJECT_DIR$/src/test/java/br/ufg/inf/es/saep/persistencia/DaoResolucaoTest.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/InterfaceAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/InterfaceAdapter.java" />
     </list>
     <ignored path="persistencia.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,23 +39,25 @@
     <favorites_list name="persistencia" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.501996">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DaoParecer.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="DaoParecer.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-                  <folding />
+                <state relative-caret-position="270">
+                  <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DaoParecerTest.groovy" pinned="false" current-in-tab="true">
+          <file leaf-file-name="DaoParecerTest.groovy" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/br/ufg/inf/es/saep/persistencia/DaoParecerTest.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1080">
+                <state relative-caret-position="889">
                   <caret line="60" column="52" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
                   <folding>
                     <element signature="e#41#92#0" expanded="true" />
@@ -88,7 +89,7 @@
           <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/build.gradle">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="380">
+                <state relative-caret-position="648">
                   <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
                   <folding />
                 </state>
@@ -110,11 +111,9 @@
           <file leaf-file-name="InterfaceAdapter.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/InterfaceAdapter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="540">
-                  <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="54">
+                  <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -122,11 +121,9 @@
           <file leaf-file-name="ParecerRepository.java" pinned="false" current-in-tab="false">
             <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.5/ce7be9c157e9c39ac4b1d095903f29de355b7aa3/saep-dominio-1.0.5-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/ParecerRepository.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="972">
-                  <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#0#4539#0" expanded="false" />
-                  </folding>
+                <state relative-caret-position="648">
+                  <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -134,7 +131,7 @@
           <file leaf-file-name="DataBase.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
+                <state relative-caret-position="126">
                   <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -146,13 +143,15 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="DaoParecer.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-                  <folding />
+                <state relative-caret-position="36">
+                  <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -489,14 +488,14 @@
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/sandbox/persistencia/DaoParecer.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoRadoc.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/InterfaceAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoResolucao.java" />
         <option value="$PROJECT_DIR$/src/test/java/br/ufg/inf/es/saep/persistencia/DaoResolucaoTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/br/ufg/inf/es/saep/persistencia/DaoParecerTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/br/ufg/inf/es/saep/persistencia/DaoResolucaoTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/InterfaceAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java" />
       </list>
     </option>
   </component>
@@ -537,7 +536,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -566,6 +565,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -638,7 +638,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1003,7 +1002,14 @@
       <option name="project" value="LOCAL" />
       <updated>1468363527600</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="A classe de teste manuais foi excluída">
+      <created>1468380459844</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1468380459844</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1060,7 +1066,8 @@
     <MESSAGE value="- Bug em serialização da interface Avaliavel resolvido&#10;- Todos os métodos passaram por testes manuais&#10;- Criação dos metodos de teste automatizado" />
     <MESSAGE value="Correção no método removeTipo" />
     <MESSAGE value="Melhora no tratamento de exceções nos métodos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Melhora no tratamento de exceções nos métodos" />
+    <MESSAGE value="A classe de teste manuais foi excluída" />
+    <option name="LAST_COMMIT_MESSAGE" value="A classe de teste manuais foi excluída" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1262,19 +1269,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.5/ce7be9c157e9c39ac4b1d095903f29de355b7aa3/saep-dominio-1.0.5-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/ParecerRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#4539#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="126">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1290,40 +1287,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/InterfaceAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state relative-caret-position="648">
           <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/MainTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/br/ufg/inf/es/saep/persistencia/DaoResolucaoTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
@@ -1334,10 +1306,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/br/ufg/inf/es/saep/persistencia/DaoParecerTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
+        <state relative-caret-position="889">
           <caret line="60" column="52" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
           <folding>
             <element signature="e#41#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/InterfaceAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.kyriosdata.saep/saep-dominio/1.0.5/ce7be9c157e9c39ac4b1d095903f29de355b7aa3/saep-dominio-1.0.5-sources.jar!/br/ufg/inf/es/saep/sandbox/dominio/ParecerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/es/saep/persistencia/DaoParecer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
